@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diogo Monteiro — Fotógrafo</title>
+  <meta name="description" content="Fotógrafo freelancer especializado em desporto e eventos motorizados. Baseado em Viana do Castelo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f5f5f3;
+      --text: #111111;
+      --text-secondary: #555555;
+      --text-tertiary: #999999;
+      --border: rgba(0,0,0,0.1);
+      --border-strong: rgba(0,0,0,0.25);
+      --radius: 8px;
+      --radius-lg: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111111;
+        --bg-secondary: #1c1c1e;
+        --text: #f0f0f0;
+        --text-secondary: #aaaaaa;
+        --text-tertiary: #666666;
+        --border: rgba(255,255,255,0.1);
+        --border-strong: rgba(255,255,255,0.25);
+      }
+    }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1.2rem;
+    }
+    .hero-name {
+      font-size: clamp(36px, 7vw, 58px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.8rem;
+    }
+    .hero-tagline {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 440px;
+      margin-bottom: 2rem;
+    }
+    .hero-nav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nav-link {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 0.5px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text);
+      border-bottom-color: var(--border-strong);
+    }
+
+    /* ── SECTIONS ── */
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* ── FILTER BAR ── */
+    .filter-bar {
+      padding: 1rem 0;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .filter-btn {
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 0.5px solid var(--border-strong);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { background: var(--bg-secondary); color: var(--text); }
+    .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+
+    /* ── GALLERY ── */
+    .gallery {
+      padding: 1.5rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .photo-card {
+      aspect-ratio: 4/3;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: var(--bg-secondary);
+    }
+    .photo-card.wide {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .photo-card:hover img { transform: scale(1.03); }
+    .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.25s;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+    }
+    .photo-card:hover .photo-overlay { background: rgba(0,0,0,0.35); }
+    .photo-label {
+      font-size: 10px;
+      color: white;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .photo-card:hover .photo-label { opacity: 1; }
+
+    /* Placeholder SVG para quando não há imagem real */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-secondary);
+      color: var(--text-tertiary);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      padding: 2.5rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 1rem;
+    }
+    .about-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .stat-card {
+      background: var(--bg-secondary);
+      border-radius: var(--radius);
+      padding: 1rem;
+    }
+    .stat-num {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+    .stat-desc {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-heading { font-size: 22px; font-weight: 500; margin-bottom: 6px; }
+    .contact-sub { font-size: 14px; color: var(--text-secondary); }
+    .contact-form {
+      width: 100%;
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .contact-form .full { grid-column: span 2; }
+    .contact-form label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 6px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      padding: 10px 12px;
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus { border-color: var(--text); }
+    .contact-form textarea { resize: vertical; min-height: 100px; }
+    .contact-submit {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      padding: 10px 24px;
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius);
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s;
+      margin-top: 4px;
+    }
+    .contact-submit:hover { background: var(--text); color: var(--bg); }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 1.5rem 0;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-name { font-size: 12px; color: var(--text-tertiary); }
+    .footer-links { display: flex; gap: 1.2rem; }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .gallery { grid-template-columns: repeat(2, 1fr); }
+      .photo-card.wide { grid-column: span 2; }
+      .about-section { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-form { grid-template-columns: 1fr; }
+      .contact-form .full { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hero-eyebrow">Fotógrafo Freelancer · Viana do Castelo</p>
+    <h1 class="hero-name">Diogo<br>Monteiro</h1>
+    <p class="hero-tagline">Capturando o movimento, a tensão e o detalhe em fotografia de desporto e eventos motorizados.</p>
+    <nav class="hero-nav" aria-label="Navegação principal">
+      <a href="#" class="nav-link active" data-section="gallery">Portfólio</a>
+      <a href="#" class="nav-link" data-section="about">Sobre</a>
+      <a href="#" class="nav-link" data-section="contact">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- SECÇÃO GALERIA -->
+  <section id="gallery" class="section active" aria-label="Galeria de fotografia">
+
+    <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="motorsport">Motorsport</button>
+      <button class="filter-btn" data-filter="hoquei">Hoquei em Patins</button>
+    </div>
+
+    <!--
+      COMO ADICIONAR AS SUAS FOTOS:
+      1. Crie uma pasta chamada "fotos/" junto a este index.html
+      2. Adicione as suas imagens lá dentro (ex: fotos/foto1.jpg)
+      3. Substitua os src="" abaixo pelo caminho correto (ex: src="fotos/foto1.jpg")
+      4. Altere o data-cat para "motorsport", "desporto" ou "retrato" conforme a foto
+      5. A primeira foto deve ter a classe "wide" para ocupar mais espaço
+    -->
+    <div class="gallery" id="gallery-grid">
+
+      <div class="photo-card wide" data-cat="motorsport">
+        <img src="" alt="Fotografia de motorsport" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:flex">Adicione a sua foto aqui</div>
+        <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
+      </div>
+
+      <div class="photo-card" data-cat="motorsport">
+        <img src="" alt="Fotografia de motorsport" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:flex">Adicione a sua foto aqui</div>
+        <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
+      </div>
+
+      <div class="photo-card" data-cat="hoquei">
+        <img src="" alt="Fotografia de hoquei em patins" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:flex">Adicione a sua foto aqui</div>
+        <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
+      </div>
+
+      <div class="photo-card" data-cat="motorsport">
+        <img src="" alt="Fotografia de motorsport" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:flex">Adicione a sua foto aqui</div>
+        <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
+      </div>
+
+      <div class="photo-card" data-cat="hoquei">
+        <img src="" alt="Fotografia de hoquei em patins" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-placeholder" style="display:flex">Adicione a sua foto aqui</div>
+        <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECÇÃO SOBRE -->
+  <section id="about" class="section" aria-label="Sobre Diogo Monteiro">
+    <div class="about-section">
+      <div>
+        <p class="section-label">Sobre mim</p>
+        <p class="about-text">
+          Fotógrafo freelancer especializado em desporto e eventos de alta velocidade. Com anos de experiência a capturar momentos decisivos em pista e fora dela, trabalho com equipas, organizadores e media para entregar imagens que contam a história do momento.<br><br>
+          Baseado em Viana do Castelo, disponível para deslocações a nível nacional e internacional. Entrega de fotografias editadas via MEGA.
+        </p>
+      </div>
+      <div>
+        <p class="section-label">Em números</p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <p class="stat-num">5+</p>
+            <p class="stat-desc">Anos de experiência</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-num">200+</p>
+            <p class="stat-desc">Eventos fotografados</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-num">15+</p>
+            <p class="stat-desc">Clientes regulares</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-num">PT / ES</p>
+            <p class="stat-desc">Cobertura geográfica</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECÇÃO CONTACTO -->
+  <section id="contact" class="section" aria-label="Contacto">
+    <div class="contact-section">
+      <div style="width:100%">
+        <p class="contact-heading">Vamos trabalhar juntos</p>
+        <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
+
+        <div class="contact-form">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="O seu nome" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email@exemplo.com" />
+          </div>
+          <div class="full">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva o seu projeto ou evento..."></textarea>
+          </div>
+          <!--
+            DICA: Para o formulário funcionar a enviar emails, use o Formspree (gratuito):
+            1. Crie conta em formspree.io
+            2. Crie um form e copie o endpoint (ex: https://formspree.io/f/xyzabcde)
+            3. Adicione action="https://formspree.io/f/SEU_ID" method="POST" à tag <form>
+            4. Envolva os campos numa <form> com esses atributos
+          -->
+          <div>
+            <button class="contact-submit" type="button">Enviar mensagem</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">© 2026 Diogo Monteiro</span>
+    <div class="footer-links">
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // Navegação entre secções
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.section');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = link.dataset.section;
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      sections.forEach(s => s.classList.toggle('active', s.id === target));
+    });
+  });
+
+  // Filtro da galeria
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const photoCards = document.querySelectorAll('.photo-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      photoCards.forEach((card, i) => {
+        const cat = card.dataset.cat;
+        const show = filter === 'todos' || cat === filter;
+        card.style.display = show ? '' : 'none';
+
+        // O primeiro card visível fica "wide"
+        card.classList.remove('wide');
+      });
+
+      // Dar classe wide ao primeiro card visível
+      const visible = [...photoCards].filter(c => c.style.display !== 'none');
+      if (visible.length > 0) visible[0].classList.add('wide');
+    });
+  });
+</script>
+
+</body>
+</html>
