@@ -99,11 +99,7 @@
     .nav-link:hover { color: var(--text); }
     .nav-link.active { color: var(--text); font-weight: 500; }
     .sidebar-footer { margin-top: 3rem; }
-    .sidebar-footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    .sidebar-footer-links { display: flex; flex-direction: column; gap: 6px; }
     .sidebar-footer-links a {
       font-size: 12px;
       color: var(--text-tertiary);
@@ -123,68 +119,106 @@
     .section { display: none; }
     .section.active { display: block; }
 
-    /* ── LANDING / HERO EDITORIAL ── */
-    .landing {
-      min-height: 100vh;
+    /* ── HERO FULLSCREEN ── */
+    .hero-fullscreen {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 3rem 3rem 2.5rem;
     }
-    .landing-top {
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781451831/sodigalicia-318_dxatks.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25) 0%,
+        rgba(0,0,0,0.1) 40%,
+        rgba(0,0,0,0.55) 100%
+      );
+      z-index: 1;
+    }
+    .hero-top {
+      position: relative;
+      z-index: 2;
+      padding: 2.5rem 3rem;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: flex-start;
     }
-    .landing-year {
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .hero-year {
       font-size: 11px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--text-tertiary);
+      color: rgba(255,255,255,0.5);
     }
-    .landing-center {
-      flex: 1;
-      display: flex;
-      align-items: center;
-    }
-    .landing-hero-name {
-      font-size: clamp(52px, 9vw, 110px);
-      font-weight: 300;
-      letter-spacing: -0.04em;
-      line-height: 0.95;
-      color: var(--text);
-    }
-    .landing-hero-name em {
-      font-style: italic;
-      font-weight: 300;
-    }
-    .landing-bottom {
+    .hero-bottom {
+      position: relative;
+      z-index: 2;
+      padding: 2.5rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
     }
-    .landing-tagline {
+    .hero-name-block {}
+    .hero-name {
+      font-size: clamp(52px, 8vw, 100px);
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      color: #ffffff;
+    }
+    .hero-name em {
+      font-style: italic;
+      font-weight: 300;
+    }
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1.5rem;
+    }
+    .hero-tagline {
       font-size: 13px;
-      color: var(--text-secondary);
+      color: rgba(255,255,255,0.7);
       line-height: 1.7;
-      max-width: 260px;
+      text-align: right;
+      max-width: 220px;
     }
-    .landing-scroll-btn {
-      font-size: 12px;
-      color: var(--text-secondary);
-      background: none;
-      border: 0.5px solid var(--border-strong);
-      border-radius: 24px;
-      padding: 8px 20px;
+    .hero-scroll-btn {
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      color: #ffffff;
+      background: rgba(255,255,255,0.12);
+      border: 0.5px solid rgba(255,255,255,0.4);
+      border-radius: 30px;
+      padding: 12px 28px;
       cursor: pointer;
-      font-family: inherit;
-      transition: all 0.2s;
+      transition: all 0.25s;
       letter-spacing: 0.04em;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      white-space: nowrap;
     }
-    .landing-scroll-btn:hover {
-      background: var(--text);
-      color: var(--bg);
-      border-color: var(--text);
+    .hero-scroll-btn:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.7);
     }
 
     /* ── GALLERY SECTION ── */
@@ -206,11 +240,7 @@
       text-transform: uppercase;
       color: var(--text-tertiary);
     }
-    .filter-bar {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
+    .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
     .filter-btn {
       font-size: 12px;
       font-family: 'Inter', sans-serif;
@@ -226,10 +256,7 @@
     .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
     /* ── MASONRY GALLERY ── */
-    .gallery {
-      columns: 2;
-      column-gap: 10px;
-    }
+    .gallery { columns: 2; column-gap: 10px; }
     .photo-card {
       break-inside: avoid;
       margin-bottom: 10px;
@@ -317,10 +344,7 @@
     .lightbox-close:hover { background: rgba(255,255,255,0.22); }
 
     /* ── ABOUT ── */
-    .about-section {
-      padding: 3rem;
-      border-top: 0.5px solid var(--border);
-    }
+    .about-section { padding: 3rem; border-top: 0.5px solid var(--border); }
     .about-wrap { max-width: 560px; }
     .section-eyebrow {
       font-size: 11px;
@@ -350,40 +374,15 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
     }
-    .stat-item {
-      padding: 1.2rem 1rem;
-      background: var(--bg-secondary);
-    }
-    .stat-num {
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      margin-bottom: 4px;
-    }
-    .stat-desc {
-      font-size: 11px;
-      color: var(--text-tertiary);
-      line-height: 1.4;
-    }
+    .stat-item { padding: 1.2rem 1rem; background: var(--bg-secondary); }
+    .stat-num { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 4px; }
+    .stat-desc { font-size: 11px; color: var(--text-tertiary); line-height: 1.4; }
 
     /* ── CONTACT ── */
-    .contact-section {
-      padding: 3rem;
-      border-top: 0.5px solid var(--border);
-    }
+    .contact-section { padding: 3rem; border-top: 0.5px solid var(--border); }
     .contact-wrap { max-width: 480px; }
-    .contact-heading {
-      font-size: clamp(24px, 4vw, 36px);
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-    }
-    .contact-sub {
-      font-size: 14px;
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
+    .contact-heading { font-size: clamp(24px, 4vw, 36px); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .contact-sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; }
     .form-field { margin-bottom: 1rem; }
     .form-field label {
       display: block;
@@ -431,22 +430,29 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 200;
-      background: var(--bg);
-      border-bottom: 0.5px solid var(--border);
       padding: 1rem 1.5rem;
       align-items: center;
       justify-content: space-between;
     }
-    .mobile-name { font-size: 14px; font-weight: 500; }
+    .mobile-header.over-hero {
+      background: transparent;
+    }
+    .mobile-header.over-content {
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .mobile-name { font-size: 14px; font-weight: 500; color: white; }
+    .mobile-name.dark { color: var(--text); }
     .mobile-menu-btn {
       background: none;
       border: none;
       cursor: pointer;
-      color: var(--text);
+      color: white;
       font-size: 20px;
       padding: 4px;
       font-family: inherit;
     }
+    .mobile-menu-btn.dark { color: var(--text); }
     .mobile-nav {
       display: none;
       position: fixed;
@@ -462,8 +468,7 @@
     .mobile-nav .nav-link { font-size: 22px; font-weight: 300; }
     .mobile-nav-close {
       position: absolute;
-      top: 1rem;
-      right: 1.5rem;
+      top: 1rem; right: 1.5rem;
       background: none;
       border: none;
       font-size: 22px;
@@ -477,8 +482,10 @@
       .sidebar { display: none; }
       .mobile-header { display: flex; }
       .main { margin-left: 0; }
-      .landing { padding: 5rem 1.5rem 2rem; min-height: 100svh; }
-      .landing-hero-name { font-size: clamp(42px, 12vw, 72px); }
+      .hero-top { padding: 5rem 1.5rem 1.5rem; }
+      .hero-bottom { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .hero-right { align-items: flex-start; }
+      .hero-tagline { text-align: left; }
       .gallery-section { padding: 2rem 1.5rem; }
       .gallery { columns: 1; }
       .about-section { padding: 2rem 1.5rem; }
@@ -497,8 +504,8 @@
 </div>
 
 <!-- MOBILE HEADER -->
-<header class="mobile-header">
-  <span class="mobile-name">Diogo Monteiro</span>
+<header class="mobile-header over-hero" id="mobile-header">
+  <span class="mobile-name" id="mobile-name">Diogo Monteiro</span>
   <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">☰</button>
 </header>
 
@@ -532,22 +539,27 @@
 <!-- MAIN -->
 <main class="main" id="main-content">
 
-  <!-- LANDING -->
+  <!-- HOME -->
   <div id="home" class="section active">
 
-    <!-- HERO EDITORIAL -->
-    <div class="landing" id="landing-hero">
-      <div class="landing-top">
-        <span class="landing-year">© 2026</span>
+    <!-- HERO FULLSCREEN -->
+    <div class="hero-fullscreen">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-top">
+        <span class="hero-eyebrow">Fotógrafo Freelancer · Viana do Castelo</span>
+        <span class="hero-year">© 2026</span>
       </div>
-      <div class="landing-center">
-        <h1 class="landing-hero-name">
-          Diogo<br><em>Monteiro</em>
-        </h1>
-      </div>
-      <div class="landing-bottom">
-        <p class="landing-tagline">Fotografia de desporto e eventos motorizados. Baseado em Viana do Castelo.</p>
-        <button class="landing-scroll-btn" id="scroll-to-gallery">Ver portfólio ↓</button>
+
+      <div class="hero-bottom">
+        <div class="hero-name-block">
+          <h1 class="hero-name">Diogo<br><em>Monteiro</em></h1>
+        </div>
+        <div class="hero-right">
+          <p class="hero-tagline">Fotografia de desporto e eventos motorizados. Baseado em Viana do Castelo.</p>
+          <button class="hero-scroll-btn" id="scroll-to-gallery">Ver portfólio ↓</button>
+        </div>
       </div>
     </div>
 
@@ -563,57 +575,46 @@
       </div>
 
       <div class="gallery" id="gallery-grid">
-
         <div class="photo-card" data-cat="motorsport">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263323/Sem-T%C3%ADtulo-1-Recuperado2_odlco9.jpg" alt="Motorsport" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
         </div>
-
         <div class="photo-card" data-cat="hoquei">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263937/juventude-106_eenfvr.jpg" alt="Hoquei em Patins" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
         </div>
-
         <div class="photo-card" data-cat="motorsport">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263325/Sem-T%C3%ADtulo-8_h88q7c.jpg" alt="Motorsport" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
         </div>
-
         <div class="photo-card" data-cat="hoquei">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263941/juventude-108_irroow.jpg" alt="Hoquei em Patins" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
         </div>
-
         <div class="photo-card" data-cat="motorsport">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-2_bzvjsg.jpg" alt="Motorsport" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
         </div>
-
         <div class="photo-card" data-cat="hoquei">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263948/juventude-142_sfrka5.jpg" alt="Hoquei em Patins" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
         </div>
-
         <div class="photo-card" data-cat="motorsport">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263278/Sem-T%C3%ADtulo-1_twhco3.jpg" alt="Motorsport" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
         </div>
-
         <div class="photo-card" data-cat="hoquei">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263968/juventude-192_irdyb8.jpg" alt="Hoquei em Patins" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
         </div>
-
         <div class="photo-card" data-cat="motorsport">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-3_bg1cub.jpg" alt="Motorsport" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
         </div>
-
         <div class="photo-card" data-cat="hoquei">
           <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263991/juventude-258_tancoq.jpg" alt="Hoquei em Patins" loading="lazy">
           <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
         </div>
-
       </div>
     </div>
   </div>
@@ -663,15 +664,47 @@
 <script>
   const sections = document.querySelectorAll('.section');
   const navLinks = document.querySelectorAll('.nav-link');
+  const mobileHeader = document.getElementById('mobile-header');
+  const mobileName = document.getElementById('mobile-name');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 
   function goTo(sectionId) {
     sections.forEach(s => s.classList.toggle('active', s.id === sectionId));
     navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === sectionId));
     document.getElementById('mobile-nav').classList.remove('open');
     window.scrollTo(0, 0);
+    updateMobileHeader(sectionId);
   }
 
-  // Portfólio mostra a home (landing + galeria)
+  function updateMobileHeader(sectionId) {
+    if (sectionId === 'home') {
+      mobileHeader.className = 'mobile-header over-hero';
+      mobileName.className = 'mobile-name';
+      mobileMenuBtn.className = 'mobile-menu-btn';
+    } else {
+      mobileHeader.className = 'mobile-header over-content';
+      mobileName.className = 'mobile-name dark';
+      mobileMenuBtn.className = 'mobile-menu-btn dark';
+    }
+  }
+
+  // Scroll detection for mobile header on hero
+  window.addEventListener('scroll', () => {
+    const homeSection = document.getElementById('home');
+    if (homeSection && homeSection.classList.contains('active')) {
+      const heroHeight = window.innerHeight;
+      if (window.scrollY > heroHeight * 0.7) {
+        mobileHeader.className = 'mobile-header over-content';
+        mobileName.className = 'mobile-name dark';
+        mobileMenuBtn.className = 'mobile-menu-btn dark';
+      } else {
+        mobileHeader.className = 'mobile-header over-hero';
+        mobileName.className = 'mobile-name';
+        mobileMenuBtn.className = 'mobile-menu-btn';
+      }
+    }
+  });
+
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       const sec = link.dataset.section;
@@ -686,17 +719,11 @@
     });
   });
 
-  // Clique no nome vai para home
-  document.getElementById('go-home').addEventListener('click', () => {
-    goTo('home');
-  });
-
-  // Botão "Ver portfólio"
+  document.getElementById('go-home').addEventListener('click', () => goTo('home'));
   document.getElementById('scroll-to-gallery').addEventListener('click', () => {
     document.getElementById('gallery-anchor').scrollIntoView({ behavior: 'smooth' });
   });
 
-  // Mobile menu
   document.getElementById('mobile-menu-btn').addEventListener('click', () => {
     document.getElementById('mobile-nav').classList.add('open');
   });
