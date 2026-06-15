@@ -36,16 +36,14 @@
     }
 
     html { font-size: 16px; scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── HEADER FIXO ── */
+    /* ── HEADER ── */
     .site-header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -68,27 +66,27 @@
       font-size: 14px;
       font-weight: 500;
       cursor: pointer;
-      transition: color 0.2s;
       color: white;
       text-decoration: none;
       letter-spacing: -0.01em;
+      transition: opacity 0.2s;
     }
+    .header-name:hover { opacity: 0.7; }
     .header-name.dark { color: var(--text); }
     .menu-btn {
       background: none;
       border: none;
       cursor: pointer;
-      font-family: inherit;
       font-size: 22px;
       color: rgba(255,255,255,0.85);
       padding: 4px;
-      transition: color 0.2s;
       line-height: 1;
+      transition: color 0.2s;
     }
     .menu-btn.dark { color: var(--text-secondary); }
     .menu-btn:hover { opacity: 0.7; }
 
-    /* ── FULLSCREEN NAV OVERLAY ── */
+    /* ── NAV OVERLAY ── */
     .nav-overlay {
       position: fixed;
       inset: 0;
@@ -102,224 +100,144 @@
       transform: translateY(-8px);
       transition: opacity 0.25s ease, transform 0.25s ease;
     }
-    .nav-overlay.open {
-      opacity: 1;
-      pointer-events: all;
-      transform: translateY(0);
-    }
+    .nav-overlay.open { opacity: 1; pointer-events: all; transform: translateY(0); }
     .nav-overlay-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 3rem;
     }
-    .nav-overlay-name {
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
+    .nav-overlay-name { font-size: 14px; font-weight: 500; letter-spacing: -0.01em; }
     .nav-close-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      font-size: 22px;
-      color: var(--text-secondary);
-      padding: 4px;
-      line-height: 1;
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: var(--text-secondary); padding: 4px; line-height: 1;
     }
     .nav-close-btn:hover { color: var(--text); }
     .nav-links-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      flex: 1;
-      justify-content: center;
+      display: flex; flex-direction: column; gap: 0;
+      flex: 1; justify-content: center;
     }
     .nav-item {
       font-size: clamp(32px, 6vw, 56px);
       font-weight: 300;
       letter-spacing: -0.03em;
       color: var(--text-tertiary);
-      background: none;
-      border: none;
+      background: none; border: none;
       border-top: 0.5px solid var(--border);
       padding: 1rem 0;
-      cursor: pointer;
-      font-family: inherit;
-      text-align: left;
+      cursor: pointer; font-family: inherit; text-align: left;
       transition: color 0.15s;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      display: flex; justify-content: space-between; align-items: center;
     }
     .nav-item:last-child { border-bottom: 0.5px solid var(--border); }
     .nav-item:hover { color: var(--text); }
-    .nav-item.active { color: var(--text); }
     .nav-item-arrow { font-size: 20px; opacity: 0; transition: opacity 0.15s; }
     .nav-item:hover .nav-item-arrow { opacity: 1; }
-    .nav-overlay-footer {
-      display: flex;
-      gap: 1.5rem;
-      padding-top: 2rem;
-    }
+    .nav-overlay-footer { display: flex; gap: 1.5rem; padding-top: 2rem; }
     .nav-overlay-footer a {
-      font-size: 12px;
-      color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color 0.15s;
+      font-size: 12px; color: var(--text-tertiary);
+      text-decoration: none; transition: color 0.15s;
     }
     .nav-overlay-footer a:hover { color: var(--text-secondary); }
 
-    /* ── MAIN ── */
-    .main { min-height: 100vh; }
-
-    .section { display: none; }
-    .section.active { display: block; }
-
-    /* ── HERO FULLSCREEN ── */
+    /* ── HERO ── */
     .hero-fullscreen {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      position: relative; width: 100%; height: 100vh;
+      overflow: hidden; display: flex;
+      flex-direction: column; justify-content: space-between;
     }
     .hero-bg {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background-image: url('https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781451831/sodigalicia-318_dxatks.jpg');
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
+      background-size: cover; background-position: center; z-index: 0;
     }
     .hero-overlay {
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%);
       z-index: 1;
     }
-    .hero-top {
-      position: relative;
-      z-index: 2;
-      padding: 2rem;
-    }
+    .hero-top { position: relative; z-index: 2; padding: 2rem; }
     .hero-eyebrow {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.6);
-      padding-top: 2rem;
-      display: block;
+      font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
+      padding-top: 2rem; display: block;
     }
     .hero-bottom {
-      position: relative;
-      z-index: 2;
+      position: relative; z-index: 2;
       padding: 2rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      display: flex; justify-content: space-between; align-items: flex-end;
+      flex-wrap: wrap; gap: 1.5rem;
     }
     .hero-name {
       font-size: clamp(52px, 8vw, 100px);
-      font-weight: 300;
-      letter-spacing: -0.04em;
-      line-height: 0.95;
-      color: #ffffff;
+      font-weight: 300; letter-spacing: -0.04em; line-height: 0.95; color: #ffffff;
     }
     .hero-name em { font-style: italic; }
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 1.2rem;
-    }
+    .hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1.2rem; }
     .hero-tagline {
-      font-size: 13px;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.7;
-      text-align: right;
-      max-width: 220px;
+      font-size: 13px; color: rgba(255,255,255,0.65);
+      line-height: 1.7; text-align: right; max-width: 220px;
     }
     .hero-scroll-btn {
-      font-size: 15px;
-      font-family: 'Inter', sans-serif;
-      color: #ffffff;
-      background: rgba(255,255,255,0.12);
-      border: 0.5px solid rgba(255,255,255,0.4);
-      border-radius: 30px;
-      padding: 14px 32px;
-      cursor: pointer;
-      transition: all 0.25s;
-      letter-spacing: 0.03em;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      font-size: 15px; font-family: 'Inter', sans-serif;
+      color: #ffffff; background: rgba(255,255,255,0.12);
+      border: 0.5px solid rgba(255,255,255,0.4); border-radius: 30px;
+      padding: 14px 32px; cursor: pointer; transition: all 0.25s;
+      letter-spacing: 0.03em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     }
-    .hero-scroll-btn:hover {
-      background: rgba(255,255,255,0.25);
-      border-color: rgba(255,255,255,0.8);
-    }
+    .hero-scroll-btn:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.8); }
 
-    /* ── GALLERY SECTION ── */
-    .gallery-section { padding: 3rem 2.5rem; }
+    /* ── SECTIONS ── */
+    .page-section { padding: 4rem 2.5rem; border-top: 0.5px solid var(--border); }
+
+    /* ── GALLERY ── */
     .gallery-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      gap: 1rem;
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
     }
-    .gallery-title {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-    }
+    .gallery-title { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary); }
     .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
     .filter-btn {
-      font-size: 12px;
-      font-family: 'Inter', sans-serif;
-      padding: 5px 14px;
-      border-radius: 20px;
+      font-size: 12px; font-family: 'Inter', sans-serif;
+      padding: 5px 14px; border-radius: 20px;
       border: 0.5px solid var(--border-strong);
-      background: transparent;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all 0.15s;
+      background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.15s;
     }
     .filter-btn:hover { color: var(--text); border-color: var(--text); }
     .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
     .gallery { columns: 2; column-gap: 10px; }
     .photo-card {
-      break-inside: avoid;
-      margin-bottom: 10px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      display: block;
+      break-inside: avoid; margin-bottom: 10px;
+      border-radius: var(--radius-lg); overflow: hidden;
+      position: relative; cursor: pointer; display: block;
     }
     .photo-card img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
     .photo-card:hover img { transform: scale(1.02); }
     .photo-overlay {
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0);
-      transition: background 0.25s;
-      display: flex; align-items: flex-end; padding: 14px;
+      position: absolute; inset: 0; background: rgba(0,0,0,0);
+      transition: background 0.25s; display: flex; align-items: flex-end; padding: 14px;
     }
     .photo-card:hover .photo-overlay { background: rgba(0,0,0,0.3); }
-    .photo-label {
-      font-size: 10px; color: white;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      opacity: 0; transition: opacity 0.2s;
-    }
+    .photo-label { font-size: 10px; color: white; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0; transition: opacity 0.2s; }
     .photo-card:hover .photo-label { opacity: 1; }
+
+    /* ── PAGINATION ── */
+    .pagination {
+      display: flex; justify-content: center;
+      align-items: center; gap: 6px; margin-top: 2.5rem;
+    }
+    .page-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 0.5px solid var(--border-strong);
+      background: transparent; color: var(--text-secondary);
+      font-family: 'Inter', sans-serif; font-size: 13px;
+      cursor: pointer; transition: all 0.15s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .page-btn:hover { border-color: var(--text); color: var(--text); }
+    .page-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
+    .page-btn.arrow { font-size: 16px; }
 
     /* ── LIGHTBOX ── */
     .lightbox {
@@ -329,47 +247,37 @@
     }
     .lightbox.open { opacity: 1; pointer-events: all; }
     .lightbox-backdrop {
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.88);
+      position: absolute; inset: 0; background: rgba(0,0,0,0.88);
       backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
     }
     .lightbox-img {
       position: relative; z-index: 1;
-      max-width: 88vw; max-height: 88vh;
-      width: auto; height: auto;
-      border-radius: var(--radius-lg);
-      transform: scale(0.96); transition: transform 0.3s ease;
+      max-width: 88vw; max-height: 88vh; width: auto; height: auto;
+      border-radius: var(--radius-lg); transform: scale(0.96); transition: transform 0.3s ease;
     }
     .lightbox.open .lightbox-img { transform: scale(1); }
     .lightbox-close {
       position: absolute; top: 1.5rem; right: 1.5rem; z-index: 2;
       width: 36px; height: 36px; border-radius: 50%;
       background: rgba(255,255,255,0.12); border: none;
-      cursor: pointer; color: white; font-size: 16px;
-      transition: background 0.15s; font-family: inherit;
+      cursor: pointer; color: white; font-size: 16px; transition: background 0.15s;
     }
     .lightbox-close:hover { background: rgba(255,255,255,0.22); }
 
     /* ── ABOUT ── */
-    .about-section { padding: 3rem 2.5rem; border-top: 0.5px solid var(--border); }
     .about-wrap { max-width: 560px; }
-    .section-eyebrow {
-      font-size: 11px; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1.5rem;
-    }
+    .section-eyebrow { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1.5rem; }
     .about-name { font-size: clamp(32px, 5vw, 48px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.5rem; }
     .about-bio { font-size: 15px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2.5rem; }
     .stats-row {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; border: 0.5px solid var(--border);
-      border-radius: var(--radius-lg); overflow: hidden;
+      gap: 1px; border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
     }
     .stat-item { padding: 1.2rem 1rem; background: var(--bg-secondary); }
     .stat-num { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 4px; }
     .stat-desc { font-size: 11px; color: var(--text-tertiary); line-height: 1.4; }
 
     /* ── CONTACT ── */
-    .contact-section { padding: 3rem 2.5rem; border-top: 0.5px solid var(--border); }
     .contact-wrap { max-width: 480px; }
     .contact-heading { font-size: clamp(24px, 4vw, 36px); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
     .contact-sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; }
@@ -378,8 +286,7 @@
     .form-field input, .form-field textarea {
       width: 100%; font-family: 'Inter', sans-serif; font-size: 14px;
       padding: 10px 0; border: none; border-bottom: 0.5px solid var(--border-strong);
-      background: transparent; color: var(--text); outline: none;
-      transition: border-color 0.15s; border-radius: 0;
+      background: transparent; color: var(--text); outline: none; transition: border-color 0.15s; border-radius: 0;
     }
     .form-field input:focus, .form-field textarea:focus { border-bottom-color: var(--text); }
     .form-field textarea { resize: vertical; min-height: 100px; }
@@ -390,16 +297,75 @@
     }
     .form-submit:hover { background: var(--text); color: var(--bg); }
 
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--text);
+      color: var(--bg);
+      padding: 4rem 2.5rem 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 3rem;
+      border-bottom: 0.5px solid rgba(255,255,255,0.15);
+      margin-bottom: 2rem;
+    }
+    .footer-brand-name {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      max-width: 220px;
+    }
+    .footer-col-title {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1rem;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a, .footer-links span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.15s;
+      cursor: pointer;
+    }
+    .footer-links a:hover, .footer-links span:hover { color: #ffffff; }
+    .footer-social-icons { display: flex; gap: 14px; margin-top: 0.5rem; }
+    .footer-social-icons a {
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-social-icons a:hover { color: #ffffff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.35); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
       .hero-bottom { flex-direction: column; align-items: flex-start; }
       .hero-right { align-items: flex-start; }
       .hero-tagline { text-align: left; }
-      .gallery-section { padding: 2rem 1.25rem; }
+      .page-section { padding: 3rem 1.25rem; }
       .gallery { columns: 1; }
-      .about-section { padding: 2rem 1.25rem; }
-      .contact-section { padding: 2rem 1.25rem; }
       .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: span 2; }
     }
   </style>
 </head>
@@ -412,146 +378,147 @@
   <img class="lightbox-img" id="lightbox-img" src="" alt="" />
 </div>
 
-<!-- NAV OVERLAY (PC + Mobile) -->
-<div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+<!-- NAV OVERLAY -->
+<div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="nav-overlay-header">
     <span class="nav-overlay-name">Diogo Monteiro</span>
     <button class="nav-close-btn" id="nav-close-btn" aria-label="Fechar menu">✕</button>
   </div>
   <div class="nav-links-list">
-    <button class="nav-item" data-section="gallery">Portfólio <span class="nav-item-arrow">→</span></button>
-    <button class="nav-item" data-section="about">Sobre <span class="nav-item-arrow">→</span></button>
-    <button class="nav-item" data-section="contact">Contacto <span class="nav-item-arrow">→</span></button>
+    <button class="nav-item" onclick="scrollToSection('gallery-section')">Portfólio <span class="nav-item-arrow">→</span></button>
+    <button class="nav-item" onclick="scrollToSection('about-section')">Sobre <span class="nav-item-arrow">→</span></button>
+    <button class="nav-item" onclick="scrollToSection('contact-section')">Contacto <span class="nav-item-arrow">→</span></button>
   </div>
   <div class="nav-overlay-footer">
-    <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/diogomonteiro.photos/" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" id="nav-facebook">Facebook</a>
   </div>
 </div>
 
 <!-- HEADER -->
 <header class="site-header over-hero" id="site-header">
-  <span class="header-name" id="header-name">Diogo Monteiro</span>
-  <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">☰</button>
+  <span class="header-name dark" id="header-name" onclick="window.scrollTo({top:0,behavior:'smooth'})">Diogo Monteiro</span>
+  <button class="menu-btn dark" id="menu-btn" aria-label="Abrir menu">☰</button>
 </header>
 
-<!-- MAIN -->
-<main class="main">
+<!-- HERO -->
+<div class="hero-fullscreen" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-top">
+    <span class="hero-eyebrow">Fotógrafo Freelancer · Viana do Castelo</span>
+  </div>
+  <div class="hero-bottom">
+    <h1 class="hero-name">Diogo<br><em>Monteiro</em></h1>
+    <div class="hero-right">
+      <p class="hero-tagline">Fotografia de desporto e eventos motorizados. Baseado em Viana do Castelo.</p>
+      <button class="hero-scroll-btn" onclick="scrollToSection('gallery-section')">Ver portfólio ↓</button>
+    </div>
+  </div>
+</div>
 
-  <!-- HOME -->
-  <div id="home" class="section active">
-    <div class="hero-fullscreen">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
-      <div class="hero-top">
-        <span class="hero-eyebrow">Fotógrafo Freelancer · Viana do Castelo</span>
-      </div>
-      <div class="hero-bottom">
-        <h1 class="hero-name">Diogo<br><em>Monteiro</em></h1>
-        <div class="hero-right">
-          <p class="hero-tagline">Fotografia de desporto e eventos motorizados. Baseado em Viana do Castelo.</p>
-          <button class="hero-scroll-btn" id="scroll-to-gallery">Ver portfólio ↓</button>
-        </div>
+<!-- GALERIA -->
+<section class="page-section" id="gallery-section">
+  <div class="gallery-header">
+    <span class="gallery-title">Portfólio</span>
+    <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
+      <button class="filter-btn active" data-filter="todos">Todos</button>
+      <button class="filter-btn" data-filter="motorsport">Motorsport</button>
+      <button class="filter-btn" data-filter="hoquei">Hoquei em Patins</button>
+    </div>
+  </div>
+  <div class="gallery" id="gallery-grid"></div>
+  <div class="pagination" id="pagination"></div>
+</section>
+
+<!-- SOBRE -->
+<section class="page-section" id="about-section">
+  <div class="about-wrap">
+    <p class="section-eyebrow">Sobre mim</p>
+    <h2 class="about-name">Diogo<br>Monteiro</h2>
+    <p class="about-bio">
+      Fotógrafo freelancer especializado em desporto e eventos de alta velocidade. Com anos de experiência a capturar momentos decisivos em pista e fora dela, trabalho com equipas, organizadores e media para entregar imagens que contam a história do momento.<br><br>
+      Baseado em Viana do Castelo, disponível para deslocações a nível nacional e internacional.
+    </p>
+    <div class="stats-row">
+      <div class="stat-item"><p class="stat-num">5+</p><p class="stat-desc">Anos de experiência</p></div>
+      <div class="stat-item"><p class="stat-num">200+</p><p class="stat-desc">Eventos fotografados</p></div>
+      <div class="stat-item"><p class="stat-num">15+</p><p class="stat-desc">Clientes regulares</p></div>
+      <div class="stat-item"><p class="stat-num">PT/ES</p><p class="stat-desc">Cobertura geográfica</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="page-section" id="contact-section">
+  <div class="contact-wrap">
+    <p class="section-eyebrow">Contacto</p>
+    <h2 class="contact-heading">Vamos trabalhar<br>juntos</h2>
+    <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
+    <div class="form-field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="O seu nome" /></div>
+    <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="email@exemplo.com" /></div>
+    <div class="form-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Descreva o seu projeto ou evento..."></textarea></div>
+    <button class="form-submit" type="button">Enviar mensagem</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand-name">Diogo Monteiro</p>
+      <p class="footer-brand-desc">Fotografia de desporto e eventos motorizados. Baseado em Viana do Castelo.</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Links Rápidos</p>
+      <div class="footer-links">
+        <span onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</span>
+        <span onclick="scrollToSection('gallery-section')">Portfólio</span>
+        <span onclick="scrollToSection('about-section')">Sobre</span>
+        <span onclick="scrollToSection('contact-section')">Contacto</span>
       </div>
     </div>
-
-    <div class="gallery-section" id="gallery-anchor">
-      <div class="gallery-header">
-        <span class="gallery-title">Portfólio</span>
-        <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
-          <button class="filter-btn active" data-filter="todos">Todos</button>
-          <button class="filter-btn" data-filter="motorsport">Motorsport</button>
-          <button class="filter-btn" data-filter="hoquei">Hoquei em Patins</button>
-        </div>
+    <div>
+      <p class="footer-col-title">Contacto</p>
+      <div class="footer-links">
+        <a href="mailto:geral@diogomonteirophotos.pt">geral@diogomonteirophotos.pt</a>
       </div>
-      <div class="gallery" id="gallery-grid">
-        <div class="photo-card" data-cat="motorsport">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263323/Sem-T%C3%ADtulo-1-Recuperado2_odlco9.jpg" alt="Motorsport" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
-        </div>
-        <div class="photo-card" data-cat="hoquei">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263937/juventude-106_eenfvr.jpg" alt="Hoquei em Patins" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
-        </div>
-        <div class="photo-card" data-cat="motorsport">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263325/Sem-T%C3%ADtulo-8_h88q7c.jpg" alt="Motorsport" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
-        </div>
-        <div class="photo-card" data-cat="hoquei">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263941/juventude-108_irroow.jpg" alt="Hoquei em Patins" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
-        </div>
-        <div class="photo-card" data-cat="motorsport">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-2_bzvjsg.jpg" alt="Motorsport" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
-        </div>
-        <div class="photo-card" data-cat="hoquei">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263948/juventude-142_sfrka5.jpg" alt="Hoquei em Patins" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
-        </div>
-        <div class="photo-card" data-cat="motorsport">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263278/Sem-T%C3%ADtulo-1_twhco3.jpg" alt="Motorsport" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
-        </div>
-        <div class="photo-card" data-cat="hoquei">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263968/juventude-192_irdyb8.jpg" alt="Hoquei em Patins" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
-        </div>
-        <div class="photo-card" data-cat="motorsport">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-3_bg1cub.jpg" alt="Motorsport" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Motorsport</span></div>
-        </div>
-        <div class="photo-card" data-cat="hoquei">
-          <img src="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263991/juventude-258_tancoq.jpg" alt="Hoquei em Patins" loading="lazy">
-          <div class="photo-overlay"><span class="photo-label">Hoquei em Patins</span></div>
-        </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Redes Sociais</p>
+      <div class="footer-social-icons">
+        <a href="#" title="Facebook" id="footer-facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/diogomonteiro.photos/" target="_blank" rel="noopener" title="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
       </div>
     </div>
   </div>
-
-  <!-- SOBRE -->
-  <section id="about" class="section about-section" aria-label="Sobre">
-    <div class="about-wrap">
-      <p class="section-eyebrow">Sobre mim</p>
-      <h2 class="about-name">Diogo<br>Monteiro</h2>
-      <p class="about-bio">
-        Fotógrafo freelancer especializado em desporto e eventos de alta velocidade. Com anos de experiência a capturar momentos decisivos em pista e fora dela, trabalho com equipas, organizadores e media para entregar imagens que contam a história do momento.<br><br>
-        Baseado em Viana do Castelo, disponível para deslocações a nível nacional e internacional.
-      </p>
-      <div class="stats-row">
-        <div class="stat-item"><p class="stat-num">5+</p><p class="stat-desc">Anos de experiência</p></div>
-        <div class="stat-item"><p class="stat-num">200+</p><p class="stat-desc">Eventos fotografados</p></div>
-        <div class="stat-item"><p class="stat-num">15+</p><p class="stat-desc">Clientes regulares</p></div>
-        <div class="stat-item"><p class="stat-num">PT/ES</p><p class="stat-desc">Cobertura geográfica</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contact" class="section contact-section" aria-label="Contacto">
-    <div class="contact-wrap">
-      <p class="section-eyebrow">Contacto</p>
-      <h2 class="contact-heading">Vamos trabalhar<br>juntos</h2>
-      <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
-      <div class="form-field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="O seu nome" /></div>
-      <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="email@exemplo.com" /></div>
-      <div class="form-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Descreva o seu projeto ou evento..."></textarea></div>
-      <button class="form-submit" type="button">Enviar mensagem</button>
-    </div>
-  </section>
-
-</main>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Diogo Monteiro. Todos os direitos reservados.</span>
+  </div>
+</footer>
 
 <script>
-  const sections = document.querySelectorAll('.section');
-  const navItems = document.querySelectorAll('.nav-item');
-  const navOverlay = document.getElementById('nav-overlay');
+  // ── Scroll to section ──
+  function scrollToSection(id) {
+    document.getElementById('nav-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // ── Header scroll behaviour ──
   const siteHeader = document.getElementById('site-header');
   const headerName = document.getElementById('header-name');
   const menuBtn = document.getElementById('menu-btn');
+  const heroEl = document.getElementById('hero');
 
-  function setHeaderStyle(onHero) {
-    if (onHero) {
+  window.addEventListener('scroll', () => {
+    const heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
+    if (window.scrollY < heroBottom - 80) {
       siteHeader.className = 'site-header over-hero';
       headerName.className = 'header-name';
       menuBtn.className = 'menu-btn';
@@ -560,73 +527,95 @@
       headerName.className = 'header-name dark';
       menuBtn.className = 'menu-btn dark';
     }
-  }
-
-  function goTo(sectionId) {
-    sections.forEach(s => s.classList.toggle('active', s.id === sectionId));
-    navItems.forEach(l => l.classList.toggle('active', l.dataset.section === sectionId));
-    navOverlay.classList.remove('open');
-    document.body.style.overflow = '';
-    window.scrollTo(0, 0);
-    setHeaderStyle(sectionId === 'home');
-  }
-
-  // Scroll detection no hero
-  window.addEventListener('scroll', () => {
-    const homeSection = document.getElementById('home');
-    if (homeSection && homeSection.classList.contains('active')) {
-      setHeaderStyle(window.scrollY < window.innerHeight * 0.7);
-    }
   });
 
-  // Menu open/close
-  menuBtn.addEventListener('click', () => {
-    navOverlay.classList.add('open');
+  // ── Nav overlay ──
+  document.getElementById('menu-btn').addEventListener('click', () => {
+    document.getElementById('nav-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
   });
   document.getElementById('nav-close-btn').addEventListener('click', () => {
-    navOverlay.classList.remove('open');
+    document.getElementById('nav-overlay').classList.remove('open');
     document.body.style.overflow = '';
   });
 
-  // Nome no header → home
-  headerName.addEventListener('click', () => goTo('home'));
+  // ── Gallery + Pagination ──
+  const allPhotos = [
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263323/Sem-T%C3%ADtulo-1-Recuperado2_odlco9.jpg', cat: 'motorsport', label: 'Motorsport' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263937/juventude-106_eenfvr.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263325/Sem-T%C3%ADtulo-8_h88q7c.jpg', cat: 'motorsport', label: 'Motorsport' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263941/juventude-108_irroow.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-2_bzvjsg.jpg', cat: 'motorsport', label: 'Motorsport' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263948/juventude-142_sfrka5.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263278/Sem-T%C3%ADtulo-1_twhco3.jpg', cat: 'motorsport', label: 'Motorsport' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263968/juventude-192_irdyb8.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-3_bg1cub.jpg', cat: 'motorsport', label: 'Motorsport' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263991/juventude-258_tancoq.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
+  ];
 
-  // Nav items
-  navItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const sec = item.dataset.section;
-      if (sec === 'gallery') {
-        goTo('home');
-        setTimeout(() => document.getElementById('gallery-anchor').scrollIntoView({ behavior: 'smooth' }), 50);
-      } else {
-        goTo(sec);
-      }
+  const PER_PAGE = 10; // 5 linhas × 2 colunas
+  let currentFilter = 'todos';
+  let currentPage = 1;
+
+  function getFiltered() {
+    return currentFilter === 'todos' ? allPhotos : allPhotos.filter(p => p.cat === currentFilter);
+  }
+
+  function renderGallery() {
+    const filtered = getFiltered();
+    const totalPages = Math.ceil(filtered.length / PER_PAGE);
+    const start = (currentPage - 1) * PER_PAGE;
+    const page = filtered.slice(start, start + PER_PAGE);
+
+    const grid = document.getElementById('gallery-grid');
+    grid.innerHTML = page.map(p => `
+      <div class="photo-card" data-src="${p.src}" data-alt="${p.label}">
+        <img src="${p.src}" alt="${p.label}" loading="lazy">
+        <div class="photo-overlay"><span class="photo-label">${p.label}</span></div>
+      </div>
+    `).join('');
+
+    // Lightbox listeners
+    grid.querySelectorAll('.photo-card').forEach(card => {
+      card.addEventListener('click', () => openLightbox(card.dataset.src, card.dataset.alt));
     });
-  });
 
-  // Scroll to gallery
-  document.getElementById('scroll-to-gallery').addEventListener('click', () => {
-    document.getElementById('gallery-anchor').scrollIntoView({ behavior: 'smooth' });
-  });
+    // Pagination
+    const pag = document.getElementById('pagination');
+    if (totalPages <= 1) { pag.innerHTML = ''; return; }
+
+    let html = '';
+    if (currentPage > 1) html += `<button class="page-btn arrow" onclick="goPage(${currentPage - 1})">‹</button>`;
+    for (let i = 1; i <= totalPages; i++) {
+      html += `<button class="page-btn${i === currentPage ? ' active' : ''}" onclick="goPage(${i})">${i}</button>`;
+    }
+    if (currentPage < totalPages) html += `<button class="page-btn arrow" onclick="goPage(${currentPage + 1})">›</button>`;
+    pag.innerHTML = html;
+  }
+
+  function goPage(page) {
+    currentPage = page;
+    renderGallery();
+    scrollToSection('gallery-section');
+  }
 
   // Filtros
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const photoCards = document.querySelectorAll('.photo-card');
-  filterBtns.forEach(btn => {
+  document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-      filterBtns.forEach(b => b.classList.remove('active'));
+      currentFilter = btn.dataset.filter;
+      currentPage = 1;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      photoCards.forEach(card => {
-        card.style.display = (filter === 'todos' || card.dataset.cat === filter) ? '' : 'none';
-      });
+      renderGallery();
     });
   });
 
-  // Lightbox
+  renderGallery();
+
+  // ── Lightbox ──
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
+
   function openLightbox(src, alt) {
     lightboxImg.src = src; lightboxImg.alt = alt;
     lightbox.classList.add('open');
@@ -636,12 +625,6 @@
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
   }
-  photoCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const img = card.querySelector('img');
-      if (img && img.src) openLightbox(img.src, img.alt);
-    });
-  });
   document.getElementById('lightbox-backdrop').addEventListener('click', closeLightbox);
   document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
