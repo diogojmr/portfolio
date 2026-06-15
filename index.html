@@ -54,79 +54,40 @@
       justify-content: space-between;
       transition: background 0.3s, border-color 0.3s;
     }
-    .site-header.over-hero {
-      background: transparent;
-      border-bottom: 0.5px solid transparent;
-    }
-    .site-header.over-content {
-      background: var(--bg);
-      border-bottom: 0.5px solid var(--border);
-    }
+    .site-header.over-hero { background: transparent; border-bottom: 0.5px solid transparent; }
+    .site-header.over-content { background: var(--bg); border-bottom: 0.5px solid var(--border); }
     .header-name {
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      color: white;
-      text-decoration: none;
-      letter-spacing: -0.01em;
-      transition: opacity 0.2s;
+      font-size: 14px; font-weight: 500; cursor: pointer;
+      color: white; letter-spacing: -0.01em; transition: opacity 0.2s;
     }
     .header-name:hover { opacity: 0.7; }
     .header-name.dark { color: var(--text); }
     .menu-btn {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 22px;
-      color: rgba(255,255,255,0.85);
-      padding: 4px;
-      line-height: 1;
-      transition: color 0.2s;
+      background: none; border: none; cursor: pointer;
+      font-size: 22px; color: rgba(255,255,255,0.85);
+      padding: 4px; line-height: 1; transition: color 0.2s;
     }
     .menu-btn.dark { color: var(--text-secondary); }
     .menu-btn:hover { opacity: 0.7; }
 
     /* ── NAV OVERLAY ── */
     .nav-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 300;
-      background: var(--bg);
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(-8px);
+      position: fixed; inset: 0; z-index: 300;
+      background: var(--bg); display: flex; flex-direction: column; padding: 2rem;
+      opacity: 0; pointer-events: none; transform: translateY(-8px);
       transition: opacity 0.25s ease, transform 0.25s ease;
     }
     .nav-overlay.open { opacity: 1; pointer-events: all; transform: translateY(0); }
-    .nav-overlay-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3rem;
-    }
+    .nav-overlay-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; }
     .nav-overlay-name { font-size: 14px; font-weight: 500; letter-spacing: -0.01em; }
-    .nav-close-btn {
-      background: none; border: none; cursor: pointer;
-      font-size: 22px; color: var(--text-secondary); padding: 4px; line-height: 1;
-    }
+    .nav-close-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: var(--text-secondary); padding: 4px; line-height: 1; }
     .nav-close-btn:hover { color: var(--text); }
-    .nav-links-list {
-      display: flex; flex-direction: column; gap: 0;
-      flex: 1; justify-content: center;
-    }
+    .nav-links-list { display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: center; }
     .nav-item {
-      font-size: clamp(32px, 6vw, 56px);
-      font-weight: 300;
-      letter-spacing: -0.03em;
-      color: var(--text-tertiary);
-      background: none; border: none;
-      border-top: 0.5px solid var(--border);
-      padding: 1rem 0;
-      cursor: pointer; font-family: inherit; text-align: left;
-      transition: color 0.15s;
+      font-size: clamp(32px, 6vw, 56px); font-weight: 300; letter-spacing: -0.03em;
+      color: var(--text-tertiary); background: none; border: none;
+      border-top: 0.5px solid var(--border); padding: 1rem 0;
+      cursor: pointer; font-family: inherit; text-align: left; transition: color 0.15s;
       display: flex; justify-content: space-between; align-items: center;
     }
     .nav-item:last-child { border-bottom: 0.5px solid var(--border); }
@@ -134,17 +95,13 @@
     .nav-item-arrow { font-size: 20px; opacity: 0; transition: opacity 0.15s; }
     .nav-item:hover .nav-item-arrow { opacity: 1; }
     .nav-overlay-footer { display: flex; gap: 1.5rem; padding-top: 2rem; }
-    .nav-overlay-footer a {
-      font-size: 12px; color: var(--text-tertiary);
-      text-decoration: none; transition: color 0.15s;
-    }
+    .nav-overlay-footer a { font-size: 12px; color: var(--text-tertiary); text-decoration: none; transition: color 0.15s; }
     .nav-overlay-footer a:hover { color: var(--text-secondary); }
 
     /* ── HERO ── */
     .hero-fullscreen {
       position: relative; width: 100%; height: 100vh;
-      overflow: hidden; display: flex;
-      flex-direction: column; justify-content: space-between;
+      overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;
     }
     .hero-bg {
       position: absolute; inset: 0;
@@ -157,81 +114,66 @@
       z-index: 1;
     }
     .hero-top { position: relative; z-index: 2; padding: 2rem; }
-    .hero-eyebrow {
-      font-size: 11px; letter-spacing: 0.18em;
-      text-transform: uppercase; color: rgba(255,255,255,0.6);
-      padding-top: 2rem; display: block;
-    }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.6); padding-top: 2rem; display: block; }
     .hero-bottom {
-      position: relative; z-index: 2;
-      padding: 2rem 2.5rem;
-      display: flex; justify-content: space-between; align-items: flex-end;
-      flex-wrap: wrap; gap: 1.5rem;
+      position: relative; z-index: 2; padding: 2rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;
     }
-    .hero-name {
-      font-size: clamp(52px, 8vw, 100px);
-      font-weight: 300; letter-spacing: -0.04em; line-height: 0.95; color: #ffffff;
-    }
+    .hero-name { font-size: clamp(52px, 8vw, 100px); font-weight: 300; letter-spacing: -0.04em; line-height: 0.95; color: #ffffff; }
     .hero-name em { font-style: italic; }
     .hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1.2rem; }
-    .hero-tagline {
-      font-size: 13px; color: rgba(255,255,255,0.65);
-      line-height: 1.7; text-align: right; max-width: 220px;
-    }
+    .hero-tagline { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; text-align: right; max-width: 220px; }
     .hero-scroll-btn {
-      font-size: 15px; font-family: 'Inter', sans-serif;
-      color: #ffffff; background: rgba(255,255,255,0.12);
-      border: 0.5px solid rgba(255,255,255,0.4); border-radius: 30px;
-      padding: 14px 32px; cursor: pointer; transition: all 0.25s;
+      font-size: 15px; font-family: 'Inter', sans-serif; color: #ffffff;
+      background: rgba(255,255,255,0.12); border: 0.5px solid rgba(255,255,255,0.4);
+      border-radius: 30px; padding: 14px 32px; cursor: pointer; transition: all 0.25s;
       letter-spacing: 0.03em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     }
     .hero-scroll-btn:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.8); }
 
-    /* ── SECTIONS ── */
-    .page-section { padding: 4rem 2.5rem; border-top: 0.5px solid var(--border); }
+    /* ── PAGE LAYOUT ── */
+    .page-content { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
 
     /* ── GALLERY ── */
+    .gallery-section { padding: 3rem 0; border-top: 0.5px solid var(--border); }
     .gallery-header {
       display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+      margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
     }
     .gallery-title { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary); }
     .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
     .filter-btn {
-      font-size: 12px; font-family: 'Inter', sans-serif;
-      padding: 5px 14px; border-radius: 20px;
-      border: 0.5px solid var(--border-strong);
+      font-size: 12px; font-family: 'Inter', sans-serif; padding: 5px 14px;
+      border-radius: 20px; border: 0.5px solid var(--border-strong);
       background: transparent; color: var(--text-secondary); cursor: pointer; transition: all 0.15s;
     }
     .filter-btn:hover { color: var(--text); border-color: var(--text); }
     .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
-    .gallery { columns: 2; column-gap: 10px; }
+    /* Masonry com fotos pequenas — 3 colunas */
+    .gallery { columns: 3; column-gap: 8px; }
     .photo-card {
-      break-inside: avoid; margin-bottom: 10px;
-      border-radius: var(--radius-lg); overflow: hidden;
+      break-inside: avoid; margin-bottom: 8px;
+      border-radius: var(--radius); overflow: hidden;
       position: relative; cursor: pointer; display: block;
     }
-    .photo-card img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
-    .photo-card:hover img { transform: scale(1.02); }
+    .photo-card img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; }
+    .photo-card:hover img { transform: scale(1.03); }
     .photo-overlay {
       position: absolute; inset: 0; background: rgba(0,0,0,0);
-      transition: background 0.25s; display: flex; align-items: flex-end; padding: 14px;
+      transition: background 0.25s; display: flex; align-items: flex-end; padding: 10px;
     }
     .photo-card:hover .photo-overlay { background: rgba(0,0,0,0.3); }
-    .photo-label { font-size: 10px; color: white; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0; transition: opacity 0.2s; }
+    .photo-label { font-size: 9px; color: white; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0; transition: opacity 0.2s; }
     .photo-card:hover .photo-label { opacity: 1; }
 
     /* ── PAGINATION ── */
-    .pagination {
-      display: flex; justify-content: center;
-      align-items: center; gap: 6px; margin-top: 2.5rem;
-    }
+    .pagination { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 2rem; }
     .page-btn {
-      width: 36px; height: 36px; border-radius: 50%;
+      width: 34px; height: 34px; border-radius: 50%;
       border: 0.5px solid var(--border-strong);
       background: transparent; color: var(--text-secondary);
-      font-family: 'Inter', sans-serif; font-size: 13px;
+      font-family: 'Inter', sans-serif; font-size: 12px;
       cursor: pointer; transition: all 0.15s;
       display: flex; align-items: center; justify-content: center;
     }
@@ -246,41 +188,34 @@
       opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
     }
     .lightbox.open { opacity: 1; pointer-events: all; }
-    .lightbox-backdrop {
-      position: absolute; inset: 0; background: rgba(0,0,0,0.88);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    }
-    .lightbox-img {
-      position: relative; z-index: 1;
-      max-width: 88vw; max-height: 88vh; width: auto; height: auto;
-      border-radius: var(--radius-lg); transform: scale(0.96); transition: transform 0.3s ease;
-    }
+    .lightbox-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+    .lightbox-img { position: relative; z-index: 1; max-width: 88vw; max-height: 88vh; width: auto; height: auto; border-radius: var(--radius-lg); transform: scale(0.96); transition: transform 0.3s ease; }
     .lightbox.open .lightbox-img { transform: scale(1); }
-    .lightbox-close {
-      position: absolute; top: 1.5rem; right: 1.5rem; z-index: 2;
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(255,255,255,0.12); border: none;
-      cursor: pointer; color: white; font-size: 16px; transition: background 0.15s;
-    }
+    .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; z-index: 2; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); border: none; cursor: pointer; color: white; font-size: 16px; transition: background 0.15s; }
     .lightbox-close:hover { background: rgba(255,255,255,0.22); }
 
-    /* ── ABOUT ── */
-    .about-wrap { max-width: 560px; }
-    .section-eyebrow { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1.5rem; }
-    .about-name { font-size: clamp(32px, 5vw, 48px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.5rem; }
-    .about-bio { font-size: 15px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2.5rem; }
-    .stats-row {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+    /* ── TWO COLUMN LAYOUT (about + contact) ── */
+    .two-col-section {
+      padding: 3rem 0;
+      border-top: 0.5px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
     }
-    .stat-item { padding: 1.2rem 1rem; background: var(--bg-secondary); }
-    .stat-num { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 4px; }
+
+    /* ── ABOUT ── */
+    .section-eyebrow { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem; }
+    .about-name { font-size: clamp(28px, 4vw, 42px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.2rem; }
+    .about-bio { font-size: 14px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2rem; }
+    .stats-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .stat-item { padding: 1rem; background: var(--bg-secondary); }
+    .stat-num { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 3px; }
     .stat-desc { font-size: 11px; color: var(--text-tertiary); line-height: 1.4; }
 
     /* ── CONTACT ── */
-    .contact-wrap { max-width: 480px; }
-    .contact-heading { font-size: clamp(24px, 4vw, 36px); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-    .contact-sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6; }
+    .contact-heading { font-size: clamp(22px, 3vw, 32px); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .contact-sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; }
     .form-field { margin-bottom: 1rem; }
     .form-field label { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
     .form-field input, .form-field textarea {
@@ -289,9 +224,9 @@
       background: transparent; color: var(--text); outline: none; transition: border-color 0.15s; border-radius: 0;
     }
     .form-field input:focus, .form-field textarea:focus { border-bottom-color: var(--text); }
-    .form-field textarea { resize: vertical; min-height: 100px; }
+    .form-field textarea { resize: vertical; min-height: 90px; }
     .form-submit {
-      margin-top: 1.5rem; font-family: 'Inter', sans-serif; font-size: 13px;
+      margin-top: 1.2rem; font-family: 'Inter', sans-serif; font-size: 13px;
       padding: 10px 24px; border: 0.5px solid var(--border-strong); border-radius: 24px;
       background: transparent; color: var(--text); cursor: pointer; transition: all 0.2s; letter-spacing: 0.04em;
     }
@@ -299,73 +234,46 @@
 
     /* ── FOOTER ── */
     .site-footer {
-      background: var(--text);
-      color: var(--bg);
-      padding: 4rem 2.5rem 2rem;
+      border-top: 0.5px solid var(--border);
+      padding: 3rem 0 2rem;
+      margin-top: 0;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr;
       gap: 2rem;
-      padding-bottom: 3rem;
-      border-bottom: 0.5px solid rgba(255,255,255,0.15);
-      margin-bottom: 2rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      margin-bottom: 1.5rem;
     }
-    .footer-brand-name {
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.75rem;
-    }
-    .footer-brand-desc {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.7;
-      max-width: 220px;
-    }
-    .footer-col-title {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 1rem;
-    }
+    .footer-brand-name { font-size: 16px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 0.6rem; }
+    .footer-brand-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; max-width: 220px; }
+    .footer-col-title { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem; }
     .footer-links { display: flex; flex-direction: column; gap: 8px; }
     .footer-links a, .footer-links span {
-      font-size: 13px;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      transition: color 0.15s;
-      cursor: pointer;
+      font-size: 13px; color: var(--text-secondary);
+      text-decoration: none; transition: color 0.15s; cursor: pointer;
     }
-    .footer-links a:hover, .footer-links span:hover { color: #ffffff; }
-    .footer-social-icons { display: flex; gap: 14px; margin-top: 0.5rem; }
-    .footer-social-icons a {
-      font-size: 18px;
-      color: rgba(255,255,255,0.6);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .footer-social-icons a:hover { color: #ffffff; }
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .footer-links a:hover, .footer-links span:hover { color: var(--text); }
+    .footer-social-icons { display: flex; gap: 14px; margin-top: 0.25rem; }
+    .footer-social-icons a { color: var(--text-secondary); text-decoration: none; transition: color 0.15s; }
+    .footer-social-icons a:hover { color: var(--text); }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-copy { font-size: 12px; color: var(--text-tertiary); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
+      .page-content { padding: 0 1.25rem; }
       .hero-bottom { flex-direction: column; align-items: flex-start; }
       .hero-right { align-items: flex-start; }
       .hero-tagline { text-align: left; }
-      .page-section { padding: 3rem 1.25rem; }
-      .gallery { columns: 1; }
-      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .gallery { columns: 2; }
+      .two-col-section { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid > div:first-child { grid-column: span 2; }
+    }
+    @media (max-width: 480px) {
+      .gallery { columns: 1; }
     }
   </style>
 </head>
@@ -386,8 +294,8 @@
   </div>
   <div class="nav-links-list">
     <button class="nav-item" onclick="scrollToSection('gallery-section')">Portfólio <span class="nav-item-arrow">→</span></button>
-    <button class="nav-item" onclick="scrollToSection('about-section')">Sobre <span class="nav-item-arrow">→</span></button>
-    <button class="nav-item" onclick="scrollToSection('contact-section')">Contacto <span class="nav-item-arrow">→</span></button>
+    <button class="nav-item" onclick="scrollToSection('about-contact-section')">Sobre <span class="nav-item-arrow">→</span></button>
+    <button class="nav-item" onclick="scrollToSection('about-contact-section')">Contacto <span class="nav-item-arrow">→</span></button>
   </div>
   <div class="nav-overlay-footer">
     <a href="https://www.instagram.com/diogomonteiro.photos/" target="_blank" rel="noopener">Instagram</a>
@@ -397,17 +305,15 @@
 
 <!-- HEADER -->
 <header class="site-header over-hero" id="site-header">
-  <span class="header-name dark" id="header-name" onclick="window.scrollTo({top:0,behavior:'smooth'})">Diogo Monteiro</span>
-  <button class="menu-btn dark" id="menu-btn" aria-label="Abrir menu">☰</button>
+  <span class="header-name" id="header-name" onclick="window.scrollTo({top:0,behavior:'smooth'})">Diogo Monteiro</span>
+  <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">☰</button>
 </header>
 
 <!-- HERO -->
 <div class="hero-fullscreen" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-top">
-    <span class="hero-eyebrow">Fotógrafo Freelancer · Viana do Castelo</span>
-  </div>
+  <div class="hero-top"><span class="hero-eyebrow">Fotógrafo Freelancer · Viana do Castelo</span></div>
   <div class="hero-bottom">
     <h1 class="hero-name">Diogo<br><em>Monteiro</em></h1>
     <div class="hero-right">
@@ -418,91 +324,101 @@
 </div>
 
 <!-- GALERIA -->
-<section class="page-section" id="gallery-section">
-  <div class="gallery-header">
-    <span class="gallery-title">Portfólio</span>
-    <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
-      <button class="filter-btn active" data-filter="todos">Todos</button>
-      <button class="filter-btn" data-filter="motorsport">Motorsport</button>
-      <button class="filter-btn" data-filter="hoquei">Hoquei em Patins</button>
+<div id="gallery-section">
+  <div class="page-content">
+    <div class="gallery-section">
+      <div class="gallery-header">
+        <span class="gallery-title">Portfólio</span>
+        <div class="filter-bar" role="group">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="motorsport">Motorsport</button>
+          <button class="filter-btn" data-filter="hoquei">Hoquei em Patins</button>
+        </div>
+      </div>
+      <div class="gallery" id="gallery-grid"></div>
+      <div class="pagination" id="pagination"></div>
     </div>
   </div>
-  <div class="gallery" id="gallery-grid"></div>
-  <div class="pagination" id="pagination"></div>
-</section>
+</div>
 
-<!-- SOBRE -->
-<section class="page-section" id="about-section">
-  <div class="about-wrap">
-    <p class="section-eyebrow">Sobre mim</p>
-    <h2 class="about-name">Diogo<br>Monteiro</h2>
-    <p class="about-bio">
-      Fotógrafo freelancer especializado em desporto e eventos de alta velocidade. Com anos de experiência a capturar momentos decisivos em pista e fora dela, trabalho com equipas, organizadores e media para entregar imagens que contam a história do momento.<br><br>
-      Baseado em Viana do Castelo, disponível para deslocações a nível nacional e internacional.
-    </p>
-    <div class="stats-row">
-      <div class="stat-item"><p class="stat-num">5+</p><p class="stat-desc">Anos de experiência</p></div>
-      <div class="stat-item"><p class="stat-num">200+</p><p class="stat-desc">Eventos fotografados</p></div>
-      <div class="stat-item"><p class="stat-num">15+</p><p class="stat-desc">Clientes regulares</p></div>
-      <div class="stat-item"><p class="stat-num">PT/ES</p><p class="stat-desc">Cobertura geográfica</p></div>
+<!-- SOBRE + CONTACTO lado a lado -->
+<div id="about-contact-section">
+  <div class="page-content">
+    <div class="two-col-section">
+
+      <!-- SOBRE -->
+      <div>
+        <p class="section-eyebrow">Sobre mim</p>
+        <h2 class="about-name">Diogo<br>Monteiro</h2>
+        <p class="about-bio">
+          Fotógrafo freelancer especializado em desporto e eventos de alta velocidade. Com anos de experiência a capturar momentos decisivos em pista e fora dela, trabalho com equipas, organizadores e media para entregar imagens que contam a história do momento.<br><br>
+          Baseado em Viana do Castelo, disponível para deslocações a nível nacional e internacional.
+        </p>
+        <div class="stats-row">
+          <div class="stat-item"><p class="stat-num">5+</p><p class="stat-desc">Anos de experiência</p></div>
+          <div class="stat-item"><p class="stat-num">200+</p><p class="stat-desc">Eventos fotografados</p></div>
+          <div class="stat-item"><p class="stat-num">15+</p><p class="stat-desc">Clientes regulares</p></div>
+          <div class="stat-item"><p class="stat-num">PT/ES</p><p class="stat-desc">Cobertura geográfica</p></div>
+        </div>
+      </div>
+
+      <!-- CONTACTO -->
+      <div>
+        <p class="section-eyebrow">Contacto</p>
+        <h2 class="contact-heading">Vamos trabalhar<br>juntos</h2>
+        <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
+        <div class="form-field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="O seu nome" /></div>
+        <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="email@exemplo.com" /></div>
+        <div class="form-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Descreva o seu projeto ou evento..."></textarea></div>
+        <button class="form-submit" type="button">Enviar mensagem</button>
+      </div>
+
     </div>
   </div>
-</section>
-
-<!-- CONTACTO -->
-<section class="page-section" id="contact-section">
-  <div class="contact-wrap">
-    <p class="section-eyebrow">Contacto</p>
-    <h2 class="contact-heading">Vamos trabalhar<br>juntos</h2>
-    <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
-    <div class="form-field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="O seu nome" /></div>
-    <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="email@exemplo.com" /></div>
-    <div class="form-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Descreva o seu projeto ou evento..."></textarea></div>
-    <button class="form-submit" type="button">Enviar mensagem</button>
-  </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <p class="footer-brand-name">Diogo Monteiro</p>
-      <p class="footer-brand-desc">Fotografia de desporto e eventos motorizados. Baseado em Viana do Castelo.</p>
-    </div>
-    <div>
-      <p class="footer-col-title">Links Rápidos</p>
-      <div class="footer-links">
-        <span onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</span>
-        <span onclick="scrollToSection('gallery-section')">Portfólio</span>
-        <span onclick="scrollToSection('about-section')">Sobre</span>
-        <span onclick="scrollToSection('contact-section')">Contacto</span>
+  <div class="page-content">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-brand-name">Diogo Monteiro</p>
+        <p class="footer-brand-desc">Fotografia de desporto e eventos motorizados. Baseado em Viana do Castelo.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Links Rápidos</p>
+        <div class="footer-links">
+          <span onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</span>
+          <span onclick="scrollToSection('gallery-section')">Portfólio</span>
+          <span onclick="scrollToSection('about-contact-section')">Sobre</span>
+          <span onclick="scrollToSection('about-contact-section')">Contacto</span>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <div class="footer-links">
+          <a href="mailto:geral@diogomonteirophotos.pt">geral@diogomonteirophotos.pt</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Redes Sociais</p>
+        <div class="footer-social-icons">
+          <a href="#" title="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/diogomonteiro.photos/" target="_blank" rel="noopener" title="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-    <div>
-      <p class="footer-col-title">Contacto</p>
-      <div class="footer-links">
-        <a href="mailto:geral@diogomonteirophotos.pt">geral@diogomonteirophotos.pt</a>
-      </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Diogo Monteiro. Todos os direitos reservados.</span>
     </div>
-    <div>
-      <p class="footer-col-title">Redes Sociais</p>
-      <div class="footer-social-icons">
-        <a href="#" title="Facebook" id="footer-facebook">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/diogomonteiro.photos/" target="_blank" rel="noopener" title="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 Diogo Monteiro. Todos os direitos reservados.</span>
   </div>
 </footer>
 
 <script>
-  // ── Scroll to section ──
   function scrollToSection(id) {
     document.getElementById('nav-overlay').classList.remove('open');
     document.body.style.overflow = '';
@@ -510,7 +426,7 @@
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }
 
-  // ── Header scroll behaviour ──
+  // Header scroll
   const siteHeader = document.getElementById('site-header');
   const headerName = document.getElementById('header-name');
   const menuBtn = document.getElementById('menu-btn');
@@ -529,7 +445,7 @@
     }
   });
 
-  // ── Nav overlay ──
+  // Nav
   document.getElementById('menu-btn').addEventListener('click', () => {
     document.getElementById('nav-overlay').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -539,7 +455,7 @@
     document.body.style.overflow = '';
   });
 
-  // ── Gallery + Pagination ──
+  // Gallery
   const allPhotos = [
     { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263323/Sem-T%C3%ADtulo-1-Recuperado2_odlco9.jpg', cat: 'motorsport', label: 'Motorsport' },
     { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263937/juventude-106_eenfvr.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
@@ -553,7 +469,7 @@
     { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263991/juventude-258_tancoq.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
   ];
 
-  const PER_PAGE = 10; // 5 linhas × 2 colunas
+  const PER_PAGE = 9;
   let currentFilter = 'todos';
   let currentPage = 1;
 
@@ -564,8 +480,7 @@
   function renderGallery() {
     const filtered = getFiltered();
     const totalPages = Math.ceil(filtered.length / PER_PAGE);
-    const start = (currentPage - 1) * PER_PAGE;
-    const page = filtered.slice(start, start + PER_PAGE);
+    const page = filtered.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
 
     const grid = document.getElementById('gallery-grid');
     grid.innerHTML = page.map(p => `
@@ -575,21 +490,18 @@
       </div>
     `).join('');
 
-    // Lightbox listeners
     grid.querySelectorAll('.photo-card').forEach(card => {
       card.addEventListener('click', () => openLightbox(card.dataset.src, card.dataset.alt));
     });
 
-    // Pagination
     const pag = document.getElementById('pagination');
     if (totalPages <= 1) { pag.innerHTML = ''; return; }
-
     let html = '';
-    if (currentPage > 1) html += `<button class="page-btn arrow" onclick="goPage(${currentPage - 1})">‹</button>`;
+    if (currentPage > 1) html += `<button class="page-btn arrow" onclick="goPage(${currentPage-1})">‹</button>`;
     for (let i = 1; i <= totalPages; i++) {
-      html += `<button class="page-btn${i === currentPage ? ' active' : ''}" onclick="goPage(${i})">${i}</button>`;
+      html += `<button class="page-btn${i===currentPage?' active':''}" onclick="goPage(${i})">${i}</button>`;
     }
-    if (currentPage < totalPages) html += `<button class="page-btn arrow" onclick="goPage(${currentPage + 1})">›</button>`;
+    if (currentPage < totalPages) html += `<button class="page-btn arrow" onclick="goPage(${currentPage+1})">›</button>`;
     pag.innerHTML = html;
   }
 
@@ -599,7 +511,6 @@
     scrollToSection('gallery-section');
   }
 
-  // Filtros
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       currentFilter = btn.dataset.filter;
@@ -612,23 +523,14 @@
 
   renderGallery();
 
-  // ── Lightbox ──
+  // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
-
-  function openLightbox(src, alt) {
-    lightboxImg.src = src; lightboxImg.alt = alt;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
+  function openLightbox(src, alt) { lightboxImg.src = src; lightboxImg.alt = alt; lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeLightbox() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
   document.getElementById('lightbox-backdrop').addEventListener('click', closeLightbox);
   document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
-
 </body>
 </html>
