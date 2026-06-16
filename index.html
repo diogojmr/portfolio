@@ -132,7 +132,7 @@
     .hero-scroll-btn:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.8); }
 
     /* ── PAGE LAYOUT ── */
-    .page-content { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+    .page-content { max-width: 1600px; margin: 0 auto; padding: 0 2.5rem; }
 
     /* ── GALLERY ── */
     .gallery-section { padding: 3rem 0; border-top: 0.5px solid var(--border); }
@@ -194,37 +194,28 @@
     .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; z-index: 2; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.12); border: none; cursor: pointer; color: white; font-size: 16px; transition: background 0.15s; }
     .lightbox-close:hover { background: rgba(255,255,255,0.22); }
 
-    /* ── ABOUT + CONTACT (linhas separadas) ── */
-    .single-section {
-      padding: 3.5rem 0;
-      border-top: 0.5px solid var(--border);
-    }
-    .single-section-inner {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 4rem;
-      align-items: start;
-    }
+    /* ── TWO COLUMN LAYOUT (about + contact) ── */
+    .two-col-section {
       padding: 3rem 0;
       border-top: 0.5px solid var(--border);
       display: grid;
-      
-      gap: 4rem;
+      grid-template-columns: 200px 1fr;
+      gap: 3rem;
       align-items: start;
     }
 
     /* ── ABOUT ── */
     .section-eyebrow { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem; }
-    .about-name { font-size: clamp(32px, 4vw, 48px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.2rem; }
-    .about-bio { font-size: 15px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2rem; }
-    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .about-name { font-size: clamp(28px, 4vw, 42px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.2rem; }
+    .about-bio { font-size: 14px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 2rem; }
+    .stats-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
     .stat-item { padding: 1rem; background: var(--bg-secondary); }
     .stat-num { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 3px; }
     .stat-desc { font-size: 11px; color: var(--text-tertiary); line-height: 1.4; }
 
     /* ── CONTACT ── */
-    .contact-heading { font-size: clamp(28px, 3.5vw, 40px); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
-    .contact-sub { font-size: 15px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; }
+    .contact-heading { font-size: clamp(22px, 3vw, 32px); font-weight: 300; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .contact-sub { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; }
     .form-field { margin-bottom: 1rem; }
     .form-field label { display: block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
     .form-field input, .form-field textarea {
@@ -277,8 +268,8 @@
       .hero-right { align-items: flex-start; }
       .hero-tagline { text-align: left; }
       .gallery { columns: 2; }
-      .single-section-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-      .footer-grid {  }
+      .two-col-section { grid-template-columns: 1fr; gap: 1rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid > div:first-child { grid-column: span 2; }
     }
     @media (max-width: 480px) {
@@ -353,23 +344,19 @@
 <!-- SOBRE -->
 <div id="about-contact-section">
   <div class="page-content">
-    <div class="single-section">
-      <div class="single-section-inner">
-        <div>
-          <p class="section-eyebrow">Sobre mim</p>
-          <h2 class="about-name">Diogo<br>Monteiro</h2>
-        </div>
-        <div>
-          <p class="about-bio">
-            Fotógrafo freelancer especializado em desporto e eventos de alta velocidade. Com anos de experiência a capturar momentos decisivos em pista e fora dela, trabalho com equipas, organizadores e media para entregar imagens que contam a história do momento.<br><br>
-            Baseado em Viana do Castelo, disponível para deslocações a nível nacional e internacional.
-          </p>
-          <div class="stats-row">
-            <div class="stat-item"><p class="stat-num">5+</p><p class="stat-desc">Anos de experiência</p></div>
-            <div class="stat-item"><p class="stat-num">200+</p><p class="stat-desc">Eventos fotografados</p></div>
-            <div class="stat-item"><p class="stat-num">15+</p><p class="stat-desc">Clientes regulares</p></div>
-            <div class="stat-item"><p class="stat-num">PT/ES</p><p class="stat-desc">Cobertura geográfica</p></div>
-          </div>
+    <div class="two-col-section">
+      <p class="section-eyebrow">Sobre mim</p>
+      <div>
+        <h2 class="about-name">Diogo<br>Monteiro</h2>
+        <p class="about-bio">
+          Fotógrafo freelancer especializado em desporto e eventos de alta velocidade. Com anos de experiência a capturar momentos decisivos em pista e fora dela, trabalho com equipas, organizadores e media para entregar imagens que contam a história do momento.<br><br>
+          Baseado em Viana do Castelo, disponível para deslocações a nível nacional e internacional.
+        </p>
+        <div class="stats-row">
+          <div class="stat-item"><p class="stat-num">5+</p><p class="stat-desc">Anos de experiência</p></div>
+          <div class="stat-item"><p class="stat-num">200+</p><p class="stat-desc">Eventos fotografados</p></div>
+          <div class="stat-item"><p class="stat-num">15+</p><p class="stat-desc">Clientes regulares</p></div>
+          <div class="stat-item"><p class="stat-num">PT/ES</p><p class="stat-desc">Cobertura geográfica</p></div>
         </div>
       </div>
     </div>
@@ -379,19 +366,15 @@
 <!-- CONTACTO -->
 <div id="contact-section">
   <div class="page-content">
-    <div class="single-section">
-      <div class="single-section-inner">
-        <div>
-          <p class="section-eyebrow">Contacto</p>
-          <h2 class="contact-heading">Vamos trabalhar<br>juntos</h2>
-        </div>
-        <div>
-          <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
-          <div class="form-field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="O seu nome" /></div>
-          <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="email@exemplo.com" /></div>
-          <div class="form-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Descreva o seu projeto ou evento..."></textarea></div>
-          <button class="form-submit" type="button">Enviar mensagem</button>
-        </div>
+    <div class="two-col-section">
+      <p class="section-eyebrow">Contacto</p>
+      <div>
+        <h2 class="contact-heading">Vamos trabalhar<br>juntos</h2>
+        <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
+        <div class="form-field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="O seu nome" /></div>
+        <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="email@exemplo.com" /></div>
+        <div class="form-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Descreva o seu projeto ou evento..."></textarea></div>
+        <button class="form-submit" type="button">Enviar mensagem</button>
       </div>
     </div>
   </div>
