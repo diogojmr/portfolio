@@ -3,8 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Diogo Monteiro — Fotógrafo</title>
-  <meta name="description" content="Fotógrafo freelancer especializado em desporto e eventos motorizados. Baseado em Viana do Castelo." />
+
+  <!-- ── SEO BÁSICO ── -->
+  <title>Diogo Monteiro | Fotógrafo Desporto, Karts e Eventos — Viana do Castelo</title>
+  <meta name="description" content="Fotógrafo freelancer especializado em desporto, karts, motorsport e hoquei em patins. Baseado em Viana do Castelo, disponível para eventos em Portugal e Espanha." />
+  <meta name="keywords" content="fotógrafo desporto, fotógrafo eventos, fotógrafo karts, fotógrafo motorsport, fotógrafo hoquei em patins, fotógrafo Viana do Castelo, fotógrafo desporto Portugal, fotografia automobilismo, fotógrafo karting Portugal, fotografia desportiva" />
+  <meta name="author" content="Diogo Monteiro" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.diogomonteirophotos.pt/" />
+  <meta name="google-site-verification" content="xHSsmAmY558Se5U4NgARSvM0LVs-acbreXkNIIwKZKA" />
+
+  <!-- ── OPEN GRAPH (Facebook / Instagram) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.diogomonteirophotos.pt/" />
+  <meta property="og:title" content="Diogo Monteiro | Fotógrafo Desporto, Karts e Eventos" />
+  <meta property="og:description" content="Fotógrafo freelancer especializado em desporto, karts, motorsport e hoquei em patins. Baseado em Viana do Castelo." />
+  <meta property="og:image" content="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781451831/sodigalicia-318_dxatks.jpg" />
+  <meta property="og:locale" content="pt_PT" />
+  <meta property="og:site_name" content="Diogo Monteiro Fotografia" />
+
+  <!-- ── TWITTER / X ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Diogo Monteiro | Fotógrafo Desporto, Karts e Eventos" />
+  <meta name="twitter:description" content="Fotógrafo freelancer especializado em desporto, karts, motorsport e hoquei em patins. Baseado em Viana do Castelo." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781451831/sodigalicia-318_dxatks.jpg" />
+
+  <!-- ── SCHEMA MARKUP (Google entende que é fotógrafo profissional) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Diogo Monteiro Fotografia",
+    "description": "Fotógrafo freelancer especializado em desporto, karts, motorsport e hoquei em patins.",
+    "url": "https://www.diogomonteirophotos.pt",
+    "image": "https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781451831/sodigalicia-318_dxatks.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Viana do Castelo",
+      "addressCountry": "PT"
+    },
+    "areaServed": ["Portugal", "Espanha"],
+    "sameAs": [
+      "https://www.instagram.com/diogomonteiro.photos/"
+    ],
+    "priceRange": "$$"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
@@ -150,8 +195,8 @@
     .filter-btn:hover { color: var(--text); border-color: var(--text); }
     .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
-    /* Masonry com fotos pequenas — 3 colunas */
-    .gallery { columns: 3; column-gap: 8px; }
+    /* Masonry com fotos pequenas — 4 colunas */
+    .gallery { columns: 4; column-gap: 8px; }
     .photo-card {
       break-inside: avoid; margin-bottom: 8px;
       border-radius: var(--radius); overflow: hidden;
@@ -460,16 +505,16 @@
 
   // Gallery
   const allPhotos = [
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263323/Sem-T%C3%ADtulo-1-Recuperado2_odlco9.jpg', cat: 'motorsport', label: 'Motorsport' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263937/juventude-106_eenfvr.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263325/Sem-T%C3%ADtulo-8_h88q7c.jpg', cat: 'motorsport', label: 'Motorsport' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263941/juventude-108_irroow.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-2_bzvjsg.jpg', cat: 'motorsport', label: 'Motorsport' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263948/juventude-142_sfrka5.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263278/Sem-T%C3%ADtulo-1_twhco3.jpg', cat: 'motorsport', label: 'Motorsport' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263968/juventude-192_irdyb8.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-3_bg1cub.jpg', cat: 'motorsport', label: 'Motorsport' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263991/juventude-258_tancoq.jpg', cat: 'hoquei', label: 'Hoquei em Patins' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263323/Sem-T%C3%ADtulo-1-Recuperado2_odlco9.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo motorsport Portugal - piloto de karting com capacete' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263937/juventude-106_eenfvr.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotógrafo hoquei em patins - jogador em ação durante jogo' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263325/Sem-T%C3%ADtulo-8_h88q7c.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo karts Portugal - piloto com capacete Arai em karting' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263941/juventude-108_irroow.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotografia desportiva hoquei em patins - disputa de bola em jogo' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-2_bzvjsg.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo eventos desporto motorsport Viana do Castelo' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263948/juventude-142_sfrka5.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotografia hoquei em patins - jogador em patins durante competição' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263278/Sem-T%C3%ADtulo-1_twhco3.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo automobilismo Portugal - fotografia de evento motorizado' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263968/juventude-192_irdyb8.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotografia desportiva hoquei patins - golo durante jogo de campeonato' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263309/Sem-T%C3%ADtulo-3_bg1cub.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo karting eventos desporto motorizado Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781263991/juventude-258_tancoq.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotografia hoquei em patins - celebração de golo em competição' },
   ];
 
   const PER_PAGE = 9;
@@ -487,8 +532,8 @@
 
     const grid = document.getElementById('gallery-grid');
     grid.innerHTML = page.map(p => `
-      <div class="photo-card" data-src="${p.src}" data-alt="${p.label}">
-        <img src="${p.src}" alt="${p.label}" loading="lazy">
+      <div class="photo-card" data-src="${p.src}" data-alt="${p.alt}">
+        <img src="${p.src}" alt="${p.alt}" loading="lazy">
         <div class="photo-overlay"><span class="photo-label">${p.label}</span></div>
       </div>
     `).join('');
