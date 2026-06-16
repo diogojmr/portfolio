@@ -267,15 +267,13 @@
       .hero-bottom { flex-direction: column; align-items: flex-start; }
       .hero-right { align-items: flex-start; }
       .hero-tagline { text-align: left; }
-      .gallery { columns: 2; column-gap: 6px; }
-      .photo-card img { height: 140px; object-fit: cover; }
+      .gallery { columns: 2; }
       .two-col-section { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid > div:first-child { grid-column: span 2; }
     }
     @media (max-width: 480px) {
-      .gallery { columns: 2; column-gap: 6px; }
-      .photo-card img { height: 120px; object-fit: cover; }
+      .gallery { columns: 1; }
     }
   </style>
 </head>
@@ -369,10 +367,14 @@
         <p class="section-eyebrow">Contacto</p>
         <h2 class="contact-heading">Vamos trabalhar<br>juntos</h2>
         <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
-        <div class="form-field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="O seu nome" /></div>
-        <div class="form-field"><label for="email">Email</label><input type="email" id="email" placeholder="email@exemplo.com" /></div>
-        <div class="form-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" placeholder="Descreva o seu projeto ou evento..."></textarea></div>
-        <button class="form-submit" type="button">Enviar mensagem</button>
+        <form action="https://formspree.io/f/xeewdepr" method="POST" id="contact-form">
+          <div class="form-field"><label for="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="O seu nome" required /></div>
+          <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="email@exemplo.com" required /></div>
+          <div class="form-field"><label for="mensagem">Mensagem</label><textarea id="mensagem" name="mensagem" placeholder="Descreva o seu projeto ou evento..." required></textarea></div>
+          <button class="form-submit" type="submit">Enviar mensagem</button>
+          <p id="form-success" style="display:none; margin-top:1rem; font-size:13px; color: var(--text-secondary);">✓ Mensagem enviada com sucesso! Responderei em breve.</p>
+          <p id="form-error" style="display:none; margin-top:1rem; font-size:13px; color:#e74c3c;">Ocorreu um erro. Por favor tente novamente.</p>
+        </form>
       </div>
 
     </div>
@@ -525,7 +527,38 @@
 
   renderGallery();
 
-  // Lightbox
+  // Formulário Formspree
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = contactForm.querySelector('.form-submit');
+      const success = document.getElementById('form-success');
+      const error = document.getElementById('form-error');
+      btn.textContent = 'A enviar...';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/xeewdepr', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
+        });
+        if (res.ok) {
+          success.style.display = 'block';
+          error.style.display = 'none';
+          contactForm.reset();
+          btn.textContent = 'Enviado ✓';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        error.style.display = 'block';
+        success.style.display = 'none';
+        btn.textContent = 'Enviar mensagem';
+        btn.disabled = false;
+      }
+    });
+  }
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   function openLightbox(src, alt) { lightboxImg.src = src; lightboxImg.alt = alt; lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; }
