@@ -132,7 +132,7 @@
     .hero-scroll-btn:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.8); }
 
     /* ── PAGE LAYOUT ── */
-    .page-content { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
+    .page-content { max-width: 1600px; margin: 0 auto; padding: 0 2.5rem; }
 
     /* ── GALLERY ── */
     .gallery-section { padding: 3rem 0; border-top: 0.5px solid var(--border); }
@@ -199,8 +199,8 @@
       padding: 3rem 0;
       border-top: 0.5px solid var(--border);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      grid-template-columns: 180px 1fr;
+      gap: 3rem;
       align-items: start;
     }
 
@@ -295,7 +295,7 @@
   <div class="nav-links-list">
     <button class="nav-item" onclick="scrollToSection('gallery-section')">Portfólio <span class="nav-item-arrow">→</span></button>
     <button class="nav-item" onclick="scrollToSection('about-contact-section')">Sobre <span class="nav-item-arrow">→</span></button>
-    <button class="nav-item" onclick="scrollToSection('about-contact-section')">Contacto <span class="nav-item-arrow">→</span></button>
+    <button class="nav-item" onclick="scrollToSection('contact-section')">Contacto <span class="nav-item-arrow">→</span></button>
   </div>
   <div class="nav-overlay-footer">
     <a href="https://www.instagram.com/diogomonteiro.photos/" target="_blank" rel="noopener">Instagram</a>
@@ -345,10 +345,8 @@
 <div id="about-contact-section">
   <div class="page-content">
     <div class="two-col-section">
-
-      <!-- SOBRE -->
+      <p class="section-eyebrow">Sobre mim</p>
       <div>
-        <p class="section-eyebrow">Sobre mim</p>
         <h2 class="about-name">Diogo<br>Monteiro</h2>
         <p class="about-bio">
           Fotógrafo freelancer especializado em desporto e eventos de alta velocidade. Com anos de experiência a capturar momentos decisivos em pista e fora dela, trabalho com equipas, organizadores e media para entregar imagens que contam a história do momento.<br><br>
@@ -361,10 +359,15 @@
           <div class="stat-item"><p class="stat-num">PT/ES</p><p class="stat-desc">Cobertura geográfica</p></div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
-      <!-- CONTACTO -->
+<div id="contact-section">
+  <div class="page-content">
+    <div class="two-col-section">
+      <p class="section-eyebrow">Contacto</p>
       <div>
-        <p class="section-eyebrow">Contacto</p>
         <h2 class="contact-heading">Vamos trabalhar<br>juntos</h2>
         <p class="contact-sub">Disponível para eventos, sessões e colaborações. Respondo em 24–48h.</p>
         <form action="https://formspree.io/f/xeewdepr" method="POST" id="contact-form">
@@ -376,7 +379,6 @@
           <p id="form-error" style="display:none; margin-top:1rem; font-size:13px; color:#e74c3c;">Ocorreu um erro. Por favor tente novamente.</p>
         </form>
       </div>
-
     </div>
   </div>
 </div>
@@ -395,7 +397,7 @@
           <span onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</span>
           <span onclick="scrollToSection('gallery-section')">Portfólio</span>
           <span onclick="scrollToSection('about-contact-section')">Sobre</span>
-          <span onclick="scrollToSection('about-contact-section')">Contacto</span>
+          <span onclick="scrollToSection('contact-section')">Contacto</span>
         </div>
       </div>
       <div>
