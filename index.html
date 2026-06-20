@@ -4,16 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ── SEO BÁSICO ── -->
   <title>Diogo Monteiro | Fotógrafo Desporto, Karts e Eventos — Viana do Castelo</title>
-  <meta name="description" content="Fotógrafo freelancer especializado em desporto, karts, motorsport e hoquei em patins. Baseado em Viana do Castelo, disponível para eventos em Portugal e Espanha." />
+  <meta name="description" content="Fotógrafo freelancer especializado em desporto, karts, motorsport e hoquei em patins. Baseado em Viana do Castelo, disponível para eventos in Portugal e Espanha." />
   <meta name="keywords" content="fotógrafo desporto, fotógrafo eventos, fotógrafo karts, fotógrafo motorsport, fotógrafo hoquei em patins, fotógrafo Viana do Castelo, fotógrafo desporto Portugal, fotografia automobilismo, fotógrafo karting Portugal, fotografia desportiva" />
   <meta name="author" content="Diogo Monteiro" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.diogomonteirophotos.pt/" />
   <meta name="google-site-verification" content="xHSsmAmY558Se5U4NgARSvM0LVs-acbreXkNIIwKZKA" />
 
-  <!-- ── OPEN GRAPH (Facebook / Instagram) ── -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.diogomonteirophotos.pt/" />
   <meta property="og:title" content="Diogo Monteiro | Fotógrafo Desporto, Karts e Eventos" />
@@ -22,13 +20,11 @@
   <meta property="og:locale" content="pt_PT" />
   <meta property="og:site_name" content="Diogo Monteiro Fotografia" />
 
-  <!-- ── TWITTER / X ── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Diogo Monteiro | Fotógrafo Desporto, Karts e Eventos" />
   <meta name="twitter:description" content="Fotógrafo freelancer especializado em desporto, karts, motorsport e hoquei em patins. Baseado em Viana do Castelo." />
   <meta name="twitter:image" content="https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781451831/sodigalicia-318_dxatks.jpg" />
 
-  <!-- ── SCHEMA MARKUP ── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,7 +44,6 @@
   }
   </script>
 
-  <!-- ── GOOGLE ANALYTICS ── -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHJCMZPCVE"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -61,7 +56,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
 
-  <!-- ── FAVICON ── -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111'/><text x='50%25' y='72%25' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='400' fill='%23fff'>D</text></svg>" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -160,7 +154,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781451831/sodigalicia-318_dxatks.jpg');
+      background-image: url('https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto/f_auto/v1781742452/2h-318_wvf6hv.jpg');
       background-size: cover; background-position: center; z-index: 0;
     }
     .hero-overlay {
@@ -205,14 +199,18 @@
     .filter-btn:hover { color: var(--text); border-color: var(--text); }
     .filter-btn.active { background: var(--text); color: var(--bg); border-color: var(--text); }
 
-    /* Masonry com fotos pequenas — 3 colunas */
-    .gallery { columns: 3; column-gap: 8px; }
+    /* Masonry com fotos — 4 colunas */
+    .gallery { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+    .gallery-row { display: flex; gap: 8px; width: 100%; }
     .photo-card {
-      break-inside: avoid; margin-bottom: 8px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      margin-bottom: 0;
       border-radius: var(--radius); overflow: hidden;
-      position: relative; cursor: pointer; display: block;
+      position: relative; cursor: pointer; display: block; flex: 0 0 auto;
     }
-    .photo-card img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; }
+    .photo-card img { width: 100%; height: 100%; display: block; transition: transform 0.4s ease; }
     .photo-card:hover img { transform: scale(1.03); }
     .photo-overlay {
       position: absolute; inset: 0; background: rgba(0,0,0,0);
@@ -334,19 +332,16 @@
       .hero-bottom { flex-direction: column; align-items: flex-start; }
       .hero-right { align-items: flex-start; }
       .hero-tagline { text-align: left; }
-      .gallery { columns: 2; }
       .two-col-section { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid > div:first-child { grid-column: span 2; }
     }
     @media (max-width: 480px) {
-      .gallery { columns: 1; }
     }
   </style>
 </head>
 <body>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotografia ampliada">
   <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
   <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">✕</button>
@@ -355,7 +350,6 @@
   <button class="lightbox-arrow lightbox-arrow-next" id="lightbox-next" aria-label="Seguinte">›</button>
 </div>
 
-<!-- NAV OVERLAY -->
 <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="nav-overlay-header">
     <span class="nav-overlay-name">Diogo Monteiro</span>
@@ -372,13 +366,11 @@
   </div>
 </div>
 
-<!-- HEADER -->
 <header class="site-header over-hero" id="site-header">
   <span class="header-name" id="header-name" onclick="window.scrollTo({top:0,behavior:'smooth'})">Diogo Monteiro</span>
   <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">☰</button>
 </header>
 
-<!-- HERO -->
 <div class="hero-fullscreen" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -392,7 +384,6 @@
   </div>
 </div>
 
-<!-- GALERIA -->
 <div id="gallery-section">
   <div class="page-content">
     <div class="gallery-section">
@@ -410,7 +401,6 @@
   </div>
 </div>
 
-<!-- SOBRE + CONTACTO lado a lado -->
 <div id="about-contact-section">
   <div class="page-content">
     <div class="two-col-section">
@@ -452,7 +442,6 @@
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="page-content">
     <div class="footer-grid">
@@ -532,43 +521,178 @@
 
   // Gallery
   const allPhotos = [
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263323/Sem-T%C3%ADtulo-1-Recuperado2_odlco9.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo motorsport Portugal - piloto de karting com capacete' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742455/redline-481_ico7ru.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo Redline karting - corrida automobilismo' },
     { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263937/juventude-106_eenfvr.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotógrafo hoquei em patins - jogador em ação durante jogo' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263325/Sem-T%C3%ADtulo-8_h88q7c.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo karts Portugal - piloto com capacete Arai em karting' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742456/regionalcup-2517_x7gsed.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia Regional Cup - kart em corrida Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742453/cmc-825_nvunpd.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia CMC karting - piloto em competição' },
     { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263941/juventude-108_irroow.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotografia desportiva hoquei em patins - disputa de bola em jogo' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263309/Sem-T%C3%ADtulo-2_bzvjsg.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo eventos desporto motorsport Viana do Castelo' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742460/tkv-10_futjxg.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo desporto motorizado - kart em alta velocidade' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742454/pkc2-2725_pofefy.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo PKC2 - corrida karting competição nacional' },
     { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263948/juventude-142_sfrka5.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotografia hoquei em patins - jogador em patins durante competição' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263278/Sem-T%C3%ADtulo-1_twhco3.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo automobilismo Portugal - fotografia de evento motorizado' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742457/sodigalicia-186_sywnh1.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia desporto motorizado - kart em velocidade' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742458/sodigalicia-563_ifrtf6.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo motorsport - kart em curva durante corrida' },
     { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263968/juventude-192_irdyb8.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotografia desportiva hoquei patins - golo durante jogo de campeonato' },
-    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263309/Sem-T%C3%ADtulo-3_bg1cub.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo karting eventos desporto motorizado Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742461/tkv-182_bzyfbd.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo motorsport Portugal - karting em pista' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742453/cmc-1247_wckfnb.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo desporto motorizado CMC - kart em pista' },
     { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781263991/juventude-258_tancoq.jpg', cat: 'hoquei', label: 'Hoquei em Patins', alt: 'Fotografia hoquei em patins - celebração de golo em competição' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742455/pkc-1936_pzq2d5.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia PKC karting - piloto em competição' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742452/2h-325_eqy6id.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo 2H motorsport - corrida karting Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742457/regionalcup-96_nnnwli.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo Regional Cup karting Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742460/sodigalicia-1868_kc5s1r.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo eventos motorsport - corrida automobilismo' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742454/cmc-474_rag5zk.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo CMC karting - piloto em alta velocidade' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742453/pkc2-944_e0bsjf.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia PKC2 - corrida karting Viana do Castelo' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742458/sodigalicia-578_woeino.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia karting - piloto em competição nacional' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742456/regionalcup-1498_z2tw29.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo karting Regional Cup - piloto em pista' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742461/tkv-1161_fx4ari.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo karts Portugal - piloto em corrida de karting' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742455/cmc-1099_vdpz2p.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo CMC motorsport - kart em pista Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742457/sodigalicia-304_nnvumj.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo karting - piloto em pista durante treino' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742453/cmc-461_oyzubm.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo CMC - automobilismo Portugal kart' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742455/pkc-724_fgfiz7.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia PKC karting Portugal - corrida de karts' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742458/sodigalicia-568_niaigp.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo automobilismo Portugal - kart em pista' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742457/sodigalicia-306_rttzxx.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia motorsport - corrida de karts em Espanha' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742454/pkc2-1092_uxesf8.jpg', cat: 'raw', label: 'Motorsport', alt: 'Fotografia PKC2 karting - evento motorsport Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742452/pkc2-920_qddy1n.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia PKC2 karting - piloto em pista competição' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742460/tkv-501_olnhgp.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia motorsport - evento de karting Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742457/sodigalicia-14_uborff.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia automobilismo - piloto de kart em competição' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742453/cmc-165_yimga9.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo CMC motorsport - evento karting Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742452/cmc-167_kscfwr.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia CMC karting - kart em velocidade durante corrida' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742457/sodigalicia-305_xs6ilb.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotógrafo eventos motorsport - karting competição' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742455/regionalcup-99_yrkhma.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia motorsport Regional Cup Portugal' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742454/pkc-717_yykpgq.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia PKC karting - kart em curva durante corrida' },
+    { src: 'https://res.cloudinary.com/dejrcqzgb/image/upload/q_auto:best/f_auto/w_1200/v1781742458/sodigalicia-564_a4m6cv.jpg', cat: 'motorsport', label: 'Motorsport', alt: 'Fotografia desporto motorizado - kart em evento Viana do Castelo' },
   ];
 
-  const PER_PAGE = 9;
+  function getRowsPerPage() {
+    if (window.innerWidth <= 480) return 5;
+    return 3; // Força exatamente 3 linhas completas por página em ecrãs maiores
+  }
+
+  function getTargetRowHeight() {
+    if (window.innerWidth <= 480) return 260;
+    if (window.innerWidth <= 768) return 230;
+    return 300;
+  }
+
+  const imageRatioCache = new Map();
+  let renderToken = 0;
+  let currentRowsPerPage = getRowsPerPage();
   let currentFilter = 'todos';
   let currentPage = 1;
+  let resizeTimer;
 
   function getFiltered() {
     return currentFilter === 'todos' ? allPhotos : allPhotos.filter(p => p.cat === currentFilter);
   }
 
-  function renderGallery() {
-    const filtered = getFiltered();
-    const totalPages = Math.ceil(filtered.length / PER_PAGE);
-    const page = filtered.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
+  function getImageRatio(photo) {
+    if (imageRatioCache.has(photo.src)) return Promise.resolve(imageRatioCache.get(photo.src));
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => {
+        const ratio = img.naturalHeight && img.naturalWidth ? img.naturalWidth / img.naturalHeight : 4 / 3;
+        imageRatioCache.set(photo.src, ratio);
+        resolve(ratio);
+      };
+      img.onerror = () => resolve(4 / 3);
+      img.src = photo.src;
+    });
+  }
 
+  function buildJustifiedRows(photos, ratios, containerWidth) {
+    const gap = 8;
+    const makeRow = (rowItems, ratioSum) => {
+      const height = Math.round((containerWidth - gap * (rowItems.length - 1)) / ratioSum);
+      const widths = rowItems.map(item => Math.round(height * ratios[item.globalIndex]));
+      const targetWidth = containerWidth - gap * (rowItems.length - 1);
+      widths[widths.length - 1] += targetWidth - widths.reduce((sum, width) => sum + width, 0);
+      return {
+        height,
+        items: rowItems.map((item, i) => ({ ...item, width: widths[i] }))
+      };
+    };
+    const makeLooseRow = rowItems => {
+      const height = getTargetRowHeight();
+      return {
+        height,
+        items: rowItems.map(item => ({ ...item, width: Math.round(height * ratios[item.globalIndex]) }))
+      };
+    };
+
+    if (window.innerWidth <= 480) {
+      return photos.map((photo, globalIndex) => {
+        const width = containerWidth;
+        const height = Math.round(width / ratios[globalIndex]);
+        return { height, items: [{ photo, globalIndex, width }] };
+      });
+    }
+
+    const targetHeight = getTargetRowHeight();
+    const rows = [];
+    let items = [];
+    let ratioSum = 0;
+
+    photos.forEach((photo, globalIndex) => {
+      items.push({ photo, globalIndex });
+      ratioSum += ratios[globalIndex];
+      const rowWidth = ratioSum * targetHeight + gap * (items.length - 1);
+      if (rowWidth >= containerWidth || items.length >= 5) {
+        rows.push(makeRow(items, ratioSum));
+        items = [];
+        ratioSum = 0;
+      }
+    });
+
+    if (items.length) {
+      rows.push(makeLooseRow(items));
+    }
+
+    return rows;
+  }
+
+  async function renderGallery() {
+    const token = ++renderToken;
+    const filtered = getFiltered();
+    
     const grid = document.getElementById('gallery-grid');
-    grid.innerHTML = page.map(p => `
-      <div class="photo-card" data-src="${p.src}" data-alt="${p.alt}">
-        <img src="${p.src}" alt="${p.alt}" loading="lazy">
-        <div class="photo-overlay"><span class="photo-label">${p.label}</span></div>
+    const ratios = await Promise.all(filtered.map(getImageRatio));
+    if (token !== renderToken) return;
+
+    // Constrói todas as linhas para o conjunto completo de fotos filtradas
+    const allRows = buildJustifiedRows(filtered, ratios, grid.clientWidth);
+    const rowsPerPage = getRowsPerPage();
+    const totalPages = Math.ceil(allRows.length / rowsPerPage);
+    if (currentPage > totalPages) currentPage = totalPages || 1;
+    
+    // Filtra apenas as linhas pertencentes à página atual
+    const pageRows = allRows.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
+
+    // Junta todas as fotos da página atual para navegação correta no Lightbox
+    const pagePhotos = [];
+    pageRows.forEach(row => {
+      row.items.forEach(item => {
+        pagePhotos.push(item.photo);
+      });
+    });
+
+    let photoPageIndex = 0;
+    grid.innerHTML = pageRows.map(row => `
+      <div class="gallery-row" style="height: ${row.height}px">
+        ${row.items.map(({ photo, width }) => {
+          const currentIndex = photoPageIndex++;
+          return `
+            <div class="photo-card" style="width: ${width}px; height: ${row.height}px" data-src="${photo.src}" data-alt="${photo.alt}" data-index="${currentIndex}">
+              <img src="${photo.src}" alt="${photo.alt}" loading="lazy">
+              <div class="photo-overlay"><span class="photo-label">${photo.label}</span></div>
+            </div>
+          `;
+        }).join('')}
       </div>
     `).join('');
 
-    grid.querySelectorAll('.photo-card').forEach((card, i) => {
+    grid.querySelectorAll('.photo-card').forEach(card => {
       card.addEventListener('click', () => {
-        const visiblePhotos = getFiltered().slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
-        openLightbox(card.dataset.src, card.dataset.alt, visiblePhotos, i);
+        const i = Number(card.dataset.index);
+        openLightbox(card.dataset.src, card.dataset.alt, pagePhotos, i);
       });
     });
 
@@ -600,6 +724,17 @@
   });
 
   renderGallery();
+  window.addEventListener('resize', () => {
+    const nextRowsPerPage = getRowsPerPage();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (nextRowsPerPage !== currentRowsPerPage) {
+        currentRowsPerPage = nextRowsPerPage;
+        currentPage = 1;
+      }
+      renderGallery();
+    }, 120);
+  });
 
   // Formulário Formspree
   const contactForm = document.getElementById('contact-form');
